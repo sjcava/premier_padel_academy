@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier Padel Academy - Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2d4a3e 0%, #4a6d52 50%, #1a2e20 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid #daa520;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><linearGradient id="shield" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23184a33"/><stop offset="100%" stop-color="%23296849"/></linearGradient></defs><path d="M200 40L360 80L350 200C350 280 280 350 200 350C120 350 50 280 50 200L40 80L200 40Z" fill="url(%23shield)" stroke="%23d4af37" stroke-width="8"/><g fill="%23000"><circle cx="100" cy="90" r="8"/><circle cx="130" cy="80" r="8"/><circle cx="160" cy="85" r="8"/><circle cx="190" cy="82" r="8"/><circle cx="220" cy="88" r="8"/><circle cx="250" cy="95" r="8"/><circle cx="280" cy="102" r="8"/><circle cx="110" cy="120" r="8"/><circle cx="140" cy="115" r="8"/><circle cx="170" cy="118" r="8"/><circle cx="200" cy="115" r="8"/><circle cx="230" cy="122" r="8"/><circle cx="260" cy="128" r="8"/><circle cx="120" cy="150" r="8"/><circle cx="150" cy="145" r="8"/><circle cx="180" cy="148" r="8"/><circle cx="210" cy="145" r="8"/><circle cx="240" cy="152" r="8"/></g><path d="M80 180C80 180 120 160 160 180C200 160 220 180 220 180L200 200C180 190 160 195 140 200L120 190L80 180Z" fill="white" stroke="%23ccc" stroke-width="2"/><ellipse cx="200" cy="220" rx="25" ry="25" fill="white" stroke="%23ccc" stroke-width="3"/><path d="M185 210C190 205 200 208 205 215C210 208 220 205 225 210L215 225C210 220 200 218 195 225L185 210Z" fill="%23333"/><rect x="60" y="290" width="280" height="50" fill="%23184a33" rx="10"/><text x="200" y="318" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">PREMIER</text><text x="200" y="338" font-family="Arial,sans-serif" font-size="18" fill="white" text-anchor="middle">PADEL ACADEMY</text></svg>') center/contain no-repeat;
+            border-radius: 10px;
+            border: 2px solid #daa520;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            background: linear-gradient(135deg, #2d4a3e, #4a6d52);
+            color: white;
+        }
+
+        .login-btn {
+            display: none;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2d4a3e, #daa520);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #2d4a3e, #4a6d52);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #daa520;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(218, 165, 32, 0.4);
+            background: linear-gradient(135deg, #4a6d52, #2d4a3e);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            border-bottom: 3px solid #daa520;
+            padding-bottom: 0.5rem;
+        }
+
+        .match-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #daa520;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .match-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .match-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .competition-name {
+            font-weight: 600;
+            color: #2d4a3e;
+            font-size: 1.1rem;
+        }
+
+        .match-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .match-players {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .players {
+            text-align: center;
+        }
+
+        .our-team {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .opponent-team {
+            color: #666;
+        }
+
+        .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 0.5rem;
+            background: linear-gradient(135deg, #2d4a3e, #4a6d52);
+            color: white;
+            border-radius: 10px;
+            border: 2px solid #daa520;
+        }
+
+        .match-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .result-indicator {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .victory {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .defeat {
+            background: #f44336;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2d4a3e;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .detailed-stats {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .stats-comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        .team-stat {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .stat-name {
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .player-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .player-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2d4a3e, #4a6d52);
+            border: 3px solid #daa520;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .calendar-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            border-left: 4px solid #daa520;
+        }
+
+        .show-details {
+            background: transparent;
+            border: 2px solid #2d4a3e;
+            color: #2d4a3e;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .show-details:hover {
+            background: #2d4a3e;
+            color: white;
+            border-color: #daa520;
+        }
+
+        .gallery {
+            display: none;
+        }
+
+        .gallery-item {
+            display: none;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .match-players {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div>
+                    <h2>Premier Padel Academy</h2>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#inicio" class="active">Inicio</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#estadisticas">Estadísticas</a>
+                <a href="#equipo">Nuestro Equipo</a>
+                <a href="#calendario">Calendario</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <h1>Premier Padel Academy</h1>
+            <p>Excelencia, Dedicación y Resultados en Cada Partido</p>
+            <button class="cta-button" onclick="scrollToResults()">Ver Nuestros Últimos Resultados</button>
+        </section>
+
+        <section class="section" id="resultados">
+            <h2>🏆 Últimos Resultados</h2>
+            <div id="matchesContainer">
+                <!-- Partido 1 -->
+                <div class="match-card">
+                    <div class="match-header">
+                        <span class="competition-name">Liga Local Amateur - Temporada 2024</span>
+                        <span class="match-date">20/08/2024</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Juan Pérez / Ana Gómez</div>
+                        </div>
+                        <div class="score">6-4, 7-5</div>
+                        <div class="players">
+                            <div class="opponent-team">Carlos Soler / Laura Ruiz</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>Duración: 01:45:30</span>
+                        <span class="result-indicator victory">VICTORIA</span>
+                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Estadísticas</button>
+                    </div>
+                    <div class="detailed-stats" id="details-0">
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">ESTADÍSTICAS GENERALES</h4>
+                        <div class="stats-comparison">
+                            <div class="team-stat">58%</div>
+                            <div class="stat-name">TOTAL POINTS WON</div>
+                            <div class="team-stat">42%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">50%</div>
+                            <div class="stat-name">BREAK POINTS CONVERTED</div>
+                            <div class="team-stat">25%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">7</div>
+                            <div class="stat-name">LONGEST STREAK</div>
+                            <div class="team-stat">4</div>
+                        </div>
+
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">ESTADÍSTICAS DE SAQUE</h4>
+                        <div class="stats-comparison">
+                            <div class="team-stat">2</div>
+                            <div class="stat-name">ACES</div>
+                            <div class="team-stat">1</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">1</div>
+                            <div class="stat-name">DOUBLE FAULTS</div>
+                            <div class="team-stat">2</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">72%</div>
+                            <div class="stat-name">WON ON 1ST SERVE</div>
+                            <div class="team-stat">65%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">60%</div>
+                            <div class="stat-name">WON ON 2ND SERVE</div>
+                            <div class="team-stat">55%</div>
+                        </div>
+
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">ESTADÍSTICAS DE RESTO</h4>
+                        <div class="stats-comparison">
+                            <div class="team-stat">35%</div>
+                            <div class="stat-name">WON ON 1ST RETURN</div>
+                            <div class="team-stat">28%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">45%</div>
+                            <div class="stat-name">WON ON 2ND RETURN</div>
+                            <div class="team-stat">40%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partido 2 -->
+                <div class="match-card">
+                    <div class="match-header">
+                        <span class="competition-name">Torneo Club Verano 2024</span>
+                        <span class="match-date">15/08/2024</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Carlos Silva / María Rodríguez</div>
+                        </div>
+                        <div class="score">6-7(5), 6-3, 6-4</div>
+                        <div class="players">
+                            <div class="opponent-team">Pedro López / Carmen Díaz</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>Duración: 02:15:45</span>
+                        <span class="result-indicator victory">VICTORIA</span>
+                        <button class="show-details" onclick="toggleMatchDetails(1)">Ver Estadísticas</button>
+                    </div>
+                    <div class="detailed-stats" id="details-1">
+                        <h4 style="margin: 1rem 0; color: #667eea;">ESTADÍSTICAS GENERALES</h4>
+                        <div class="stats-comparison">
+                            <div class="team-stat">52%</div>
+                            <div class="stat-name">TOTAL POINTS WON</div>
+                            <div class="team-stat">48%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">40%</div>
+                            <div class="stat-name">BREAK POINTS CONVERTED</div>
+                            <div class="team-stat">33%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">6</div>
+                            <div class="stat-name">LONGEST STREAK</div>
+                            <div class="team-stat">5</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partido 3 -->
+                <div class="match-card">
+                    <div class="match-header">
+                        <span class="competition-name">Liga Local Amateur - Temporada 2024</span>
+                        <span class="match-date">10/08/2024</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Juan Pérez / Ana Gómez</div>
+                        </div>
+                        <div class="score">4-6, 3-6</div>
+                        <div class="players">
+                            <div class="opponent-team">Roberto García / Elena Martín</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>Duración: 01:20:15</span>
+                        <span class="result-indicator defeat">DERROTA</span>
+                        <button class="show-details" onclick="toggleMatchDetails(2)">Ver Estadísticas</button>
+                    </div>
+                    <div class="detailed-stats" id="details-2">
+                        <h4 style="margin: 1rem 0; color: #667eea;">ESTADÍSTICAS GENERALES</h4>
+                        <div class="stats-comparison">
+                            <div class="team-stat">45%</div>
+                            <div class="stat-name">TOTAL POINTS WON</div>
+                            <div class="team-stat">55%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">20%</div>
+                            <div class="stat-name">BREAK POINTS CONVERTED</div>
+                            <div class="team-stat">60%</div>
+                        </div>
+                        <div class="stats-comparison">
+                            <div class="team-stat">4</div>
+                            <div class="stat-name">LONGEST STREAK</div>
+                            <div class="team-stat">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="cta-button" style="margin-top: 1rem;">Ver Todos los Resultados</button>
+        </section>
+
+        <section class="section" id="estadisticas">
+            <h2>📊 Estadísticas Destacadas del Equipo</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">75%</div>
+                    <div class="stat-label">Porcentaje de Victorias</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">28</div>
+                    <div class="stat-label">Total Partidos Jugados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">21</div>
+                    <div class="stat-label">Partidos Ganados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">45</div>
+                    <div class="stat-label">Sets Ganados</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+            <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugadores Destacados</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">Juan Pérez</div>
+                    <div class="stat-label">Más Victorias (15)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Ana Gómez</div>
+                    <div class="stat-label">Mejor % Puntos Ganados (68%)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="equipo">
+            <h2>👥 Nuestro Equipo - Premier Padel Academy</h2>
+            <div class="team-grid">
+                <div class="player-card">
+                    <div class="player-avatar">OA</div>
+                    <h3>Omar Alvarez</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">GB</div>
+                    <h3>Gabriel Barcena</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">GB</div>
+                    <h3>Gustavo Barcos</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">SC</div>
+                    <h3>Simon Cava</h3>
+                    <p>🤚 IZQ</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">DF</div>
+                    <h3>Daniel Figuera</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">CF</div>
+                    <h3>Christian Frendin</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">JG</div>
+                    <h3>Juan Guinand Hernandez</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">EJ</div>
+                    <h3>Edgar Jaua</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">RL</div>
+                    <h3>Ricardo Jose Larrazabal Vera</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">HS</div>
+                    <h3>Honorio Sigala</h3>
+                    <p>🤚 DER</p>
+                </div>
+                <div class="player-card">
+                    <div class="player-avatar">AV</div>
+                    <h3>Alejandro Villoria Garcia</h3>
+                    <p>🤚 DER</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="calendario">
+            <h2>📅 Próximas Competiciones</h2>
+            <div id="upcomingMatches">
+                <div class="calendar-item">
+                    <div>
+                        <h4>🎄 Torneo de Navidad</h4>
+                        <p>Club Deportivo Central - Categoría Amateur</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>25/12/2024</strong>
+                        <p>10:00 AM</p>
+                    </div>
+                </div>
+                <div class="calendar-item">
+                    <div>
+                        <h4>🏆 Liga Local - Jornada 15</h4>
+                        <p>Club Pádel Norte - Eliminatorias</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>02/01/2025</strong>
+                        <p>16:00 PM</p>
+                    </div>
+                </div>
+                <div class="calendar-item">
+                    <div>
+                        <h4>🥇 Torneo Intermunicipal</h4>
+                        <p>Centro Deportivo Municipal - Semifinales</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>15/01/2025</strong>
+                        <p>09:00 AM</p>
+                    </div>
+                </div>
+                <div class="calendar-item">
+                    <div>
+                        <h4>⭐ Copa Regional Amateur</h4>
+                        <p>Complejo Deportivo Regional - Primera Ronda</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>28/01/2025</strong>
+                        <p>11:30 AM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-content">
+            <div>
+                <h3>📞 Contacto</h3>
+                <p>Email: info@premierpadelacademy.com</p>
+                <p>WhatsApp: +34 666 123 456</p>
+            </div>
+            <div>
+                <h3>📱 Redes Sociales</h3>
+                <p>Instagram: @premierpadelacademy</p>
+                <p>Facebook: Premier Padel Academy</p>
+            </div>
+            <div>
+                <h3>📋 Información</h3>
+                <p>Reglamento del Equipo</p>
+                <p>Política de Entrenamientos</p>
+            </div>
+        </div>
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+            <p>&copy; 2024 Premier Padel Academy. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMatchDetails(matchIndex) {
+            const detailsDiv = document.getElementById(`details-${matchIndex}`);
+            const button = event.target;
+            
+            if (detailsDiv.style.display === 'none' || detailsDiv.style.display === '') {
+                detailsDiv.style.display = 'block';
+                button.textContent = 'Ocultar Estadísticas';
+            } else {
+                detailsDiv.style.display = 'none';
+                button.textContent = 'Ver Estadísticas';
+            }
+        }
+
+        function scrollToResults() {
+            document.getElementById('resultados').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Navegación suave
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                
