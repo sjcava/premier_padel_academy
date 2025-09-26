@@ -726,6 +726,10 @@
                 <canvas id="performanceChart"></canvas>
             </div>
 
+            <div class="chart-container">
+                <canvas id="playersChart"></canvas>
+            </div>
+
             <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Segunda Jornada</h3>
             <div class="stats-grid">
                 <div class="stat-card">
@@ -926,7 +930,7 @@
                 });
             });
 
-            // Crear gráfico de rendimiento
+            // Crear gráfico de rendimiento del equipo
             const ctx = document.getElementById('performanceChart');
             if (ctx) {
                 new Chart(ctx, {
@@ -974,6 +978,82 @@
                                 title: {
                                     display: true,
                                     text: 'Jornadas'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Crear gráfico de rendimiento por jugador (2+ partidos)
+            const ctxJugadores = document.getElementById('playersChart');
+            if (ctxJugadores) {
+                new Chart(ctxJugadores, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Gabriel Bárcena', 'Daniel Figuera', 'Honorio Sigala'],
+                        datasets: [{
+                            label: 'Winners (W)',
+                            data: [16, 9, 15], // Gabriel: 6+10, Daniel: 3+6, Honorio: 9+6
+                            backgroundColor: 'rgba(45, 74, 62, 0.8)',
+                            borderColor: '#2d4a3e',
+                            borderWidth: 2
+                        }, {
+                            label: 'Errores No Forzados (UE)',
+                            data: [10, 14, 28], // Gabriel: 3+7, Daniel: 7+7, Honorio: 18+10
+                            backgroundColor: 'rgba(244, 67, 54, 0.8)',
+                            borderColor: '#f44336',
+                            borderWidth: 2
+                        }, {
+                            label: 'Eficiencia Ponderada (%)',
+                            data: [72.35, 42.0, 34.8], // Promedio de ambos partidos
+                            type: 'line',
+                            backgroundColor: 'rgba(218, 165, 32, 0.2)',
+                            borderColor: '#daa520',
+                            borderWidth: 3,
+                            yAxisID: 'y1',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Rendimiento de Jugadores con 2+ Partidos'
+                            },
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Cantidad'
+                                },
+                                position: 'left'
+                            },
+                            y1: {
+                                type: 'linear',
+                                display: true,
+                                position: 'right',
+                                beginAtZero: true,
+                                max: 100,
+                                title: {
+                                    display: true,
+                                    text: 'Eficiencia (%)'
+                                },
+                                grid: {
+                                    drawOnChartArea: false,
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Jugadores'
                                 }
                             }
                         }
