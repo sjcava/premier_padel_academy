@@ -490,7 +490,89 @@
         <section class="section" id="resultados">
             <h2>🏆 Últimos Resultados</h2>
             <div id="matchesContainer">
-                <!-- Partido Real - Primera Jornada -->
+                <!-- Partido Más Reciente - Segunda Jornada -->
+                <div class="match-card">
+                    <div class="match-header">
+                        <span class="competition-name">Segunda Jornada</span>
+                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="match-date">25/09/2024</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Premier Padel Academy</div>
+                        </div>
+                        <div class="score">3-0</div>
+                        <div class="players">
+                            <div class="opponent-team">Vivora Padel</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>3 Partidos Jugados</span>
+                        <span></span>
+                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Estadísticas</button>
+                    </div>
+                    <div class="detailed-stats" id="details-0">
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Daniel Figuera</strong> vs Juan Méndez / Enrique Velázquez</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-2</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Omar Álvarez:</strong></p>
+                                    <p>W: 4 | UE: 7 | Eficiencia: 36.4% | Ef. Ponderada: 32.0%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Daniel Figuera:</strong></p>
+                                    <p>W: 6 | UE: 7 | Eficiencia: 46.2% | Ef. Ponderada: 48.0%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gabriel Bárcena / Simón Cava</strong> vs Juan Agudelo / Erasmo García</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-2</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Gabriel Bárcena:</strong></p>
+                                    <p>W: 10 | UE: 7 | Eficiencia: 58.8% | Ef. Ponderada: 64.7%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Simón Cava:</strong></p>
+                                    <p>W: 9 | UE: 8 | Eficiencia: 52.9% | Ef. Ponderada: 56.5%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Frendín / Honorio Sigala</strong> vs Miguel Andrade / José Agudelo</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-4, 6-4</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Christian Frendín:</strong></p>
+                                    <p>W: 7 | UE: 11 | Eficiencia: 38.9% | Ef. Ponderada: 33.8%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Honorio Sigala:</strong></p>
+                                    <p>W: 6 | UE: 10 | Eficiencia: 37.5% | Ef. Ponderada: 33.0%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
+                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 42</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 50</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 45.7%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 45.3%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partido Anterior - Primera Jornada -->
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Primera Jornada</span>
@@ -509,14 +591,14 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(1)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-0">
+                    <div class="detailed-stats" id="details-1">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
                             <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Daniel Figuera / Gabriel Barcena</strong> vs Raul Reinoso / Alfredo Puglia</p>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Daniel Figuera / Gabriel Bárcena</strong> vs Raul Reinoso / Alfredo Puglia</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-0, 6-0</p>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
@@ -524,7 +606,7 @@
                                     <p>W: 3 | UE: 7 | Eficiencia: 30.0% | Ef. Ponderada: 36.0%</p>
                                 </div>
                                 <div style="text-align: center;">
-                                    <p><strong>Gabriel Barcena:</strong></p>
+                                    <p><strong>Gabriel Bárcena:</strong></p>
                                     <p>W: 6 | UE: 3 | Eficiencia: 66.7% | Ef. Ponderada: 80.0%</p>
                                 </div>
                             </div>
@@ -578,11 +660,11 @@
             <h2>📊 Estadísticas Destacadas del Equipo</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Encuentros Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Encuentros Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -590,11 +672,11 @@
                     <div class="stat-label">Encuentros Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">6</div>
                     <div class="stat-label">Partidos Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">5</div>
                     <div class="stat-label">Partidos Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -602,7 +684,7 @@
                     <div class="stat-label">Partidos Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
+                    <div class="stat-value">10</div>
                     <div class="stat-label">Sets Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -627,7 +709,7 @@
                     <div style="font-size: 0.7rem; color: #666; font-style: italic; margin-top: 0.3rem;">(habiendo perdido el primer set se gana el partido)</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Encuentros Invictos Consecutivos</div>
                 </div>
                 <div class="stat-card">
@@ -635,7 +717,7 @@
                     <div class="stat-label">Sets Ganados 6-0</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">🍺 81</div>
+                    <div class="stat-value">🍺 162</div>
                     <div class="stat-label">Cantidad de Cervezas</div>
                 </div>
             </div>
@@ -644,10 +726,18 @@
                 <canvas id="performanceChart"></canvas>
             </div>
 
+            <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Segunda Jornada</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">Gabriel Bárcena</div>
+                    <div class="stat-label">W: 10 | UE: 7 | Eficiencia: 58.8% | Ef. Ponderada: 64.7%</div>
+                </div>
+            </div>
+
             <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Primera Jornada</h3>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">Gabriel Barcena</div>
+                    <div class="stat-value">Gabriel Bárcena</div>
                     <div class="stat-label">W: 6 | UE: 3 | Eficiencia: 66.7% | Ef. Ponderada: 80.0%</div>
                 </div>
             </div>
@@ -723,24 +813,6 @@
         <section class="section" id="calendario">
             <h2>📅 Próximas Competiciones</h2>
             <div id="upcomingMatches">
-                <div class="calendar-item">
-                    <div>
-                        <h4>🎾 vs CENTRO ITALO</h4>
-                        <p>VIVORA</p>
-                    </div>
-                    <div style="text-align: right;">
-                        <strong>18 Septiembre 2024</strong>
-                    </div>
-                </div>
-                <div class="calendar-item">
-                    <div>
-                        <h4>🎾 vs VIVORA PADEL</h4>
-                        <p>VENPLAY</p>
-                    </div>
-                    <div style="text-align: right;">
-                        <strong>25 Septiembre 2024</strong>
-                    </div>
-                </div>
                 <div class="calendar-item">
                     <div>
                         <h4>🎾 vs ALTAMIRA</h4>
@@ -853,5 +925,62 @@
                     this.classList.add('active');
                 });
             });
+
+            // Crear gráfico de rendimiento
+            const ctx = document.getElementById('performanceChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Primera Jornada', 'Segunda Jornada'],
+                        datasets: [{
+                            label: 'Eficiencia General (%)',
+                            data: [35.0, 45.7],
+                            borderColor: '#2d4a3e',
+                            backgroundColor: 'rgba(45, 74, 62, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }, {
+                            label: 'Eficiencia Ponderada (%)',
+                            data: [41.7, 45.3],
+                            borderColor: '#daa520',
+                            backgroundColor: 'rgba(218, 165, 32, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Evolución del Rendimiento del Equipo'
+                            },
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: {
+                                    display: true,
+                                    text: 'Porcentaje (%)'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Jornadas'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
         });
     </script>
+</body>
+</html>
