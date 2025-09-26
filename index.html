@@ -1025,6 +1025,19 @@
                             legend: {
                                 display: true,
                                 position: 'top'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    afterBody: function(context) {
+                                        if (context[0].datasetIndex === 1) { // UE dataset
+                                            const player = context[0].label;
+                                            if (player === 'Gabriel Bárcena') return 'Primera: 3 UE | Segunda: 7 UE';
+                                            if (player === 'Daniel Figuera') return 'Primera: 7 UE | Segunda: 7 UE';
+                                            if (player === 'Honorio Sigala') return 'Primera: 18 UE | Segunda: 10 UE';
+                                        }
+                                        return '';
+                                    }
+                                }
                             }
                         },
                         scales: {
