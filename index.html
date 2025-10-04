@@ -1148,21 +1148,13 @@
     </div>
 
     <script>
-        const apiKey = "AIzaSyAzfnFd14fKmQInHwBX09C9fw7Qot0_9Ok";
-
         async function callGemini(prompt, retries = 3, delay = 1000) {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-            
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-            };
-
             for (let i = 0; i < retries; i++) {
                 try {
-                    const response = await fetch(apiUrl, {
+                    const response = await fetch('/api/gemini', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: JSON.stringify({ prompt })
                     });
 
                     if (!response.ok) {
@@ -1170,10 +1162,13 @@
                     }
 
                     const result = await response.json();
-                    if (result.candidates && result.candidates[0].content.parts[0].text) {
-                        return result.candidates[0].content.parts[0].text;
+                    
+                    if (result.text) {
+                        return result.text;
+                    } else if (result.error) {
+                        throw new Error(result.error);
                     } else {
-                        throw new Error("Respuesta inválida de la API de Gemini.");
+                        throw new Error("Respuesta inválida del servidor");
                     }
                 } catch (error) {
                     console.error(`Intento ${i + 1} fallido:`, error);
