@@ -895,6 +895,9 @@
             <div class="chart-container">
                 <canvas id="winnersRankingChart"></canvas>
             </div>
+            <div class="chart-container">
+    <canvas id="efficiencyRankingChart"></canvas>
+</div>
 
             <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Tercera Jornada</h3>
             <div class="stats-grid">
@@ -1083,7 +1086,7 @@
             </div>
         </div>
         <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
-            <p>&copy; 2024 Premier Padel Academy. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Premier Padel Academy. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -1421,7 +1424,7 @@
                                 beginAtZero: true,
                                 title: {
                                     display: true,
-                                    text: 'Total de Winners'
+                                    text: ''
                                 }
                             }
                         }
@@ -1429,7 +1432,71 @@
                 });
             }
         });
+        const ctxEfficiencyRanking = document.getElementById('efficiencyRankingChart');
+        if (ctxEfficiencyRanking) {
+            new Chart(ctxEfficiencyRanking, {
+                type: 'bar',
+                data: {
+                    labels: ['Gabriel Bárcena', 'Simón Cava', 'Daniel Figuera', 'Omar Álvarez', 'Christian Frendín', 'Gustavo Barcos', 'Edgar Jaua', 'Honorio Sigala', 'Alejandro Villoría', 'Juan Guinand'],
+                    datasets: [{
+                        label: 'Ranking de efeciencia ponderada (%)',
+                        data: [72.4, 47.7, 42.0, 41.0, 40.6, 39.6, 35.2, 34.8, 33.3, 27.0],
+                        backgroundColor: [
+                            'rgba(76, 175, 80, 0.9)',
+                            'rgba(76, 175, 80, 0.8)',
+                            'rgba(139, 195, 74, 0.8)',
+                            'rgba(139, 195, 74, 0.75)',
+                            'rgba(255, 193, 7, 0.8)',
+                            'rgba(255, 193, 7, 0.75)',
+                            'rgba(255, 152, 0, 0.8)',
+                            'rgba(255, 152, 0, 0.75)',
+                            'rgba(244, 67, 54, 0.8)',
+                            'rgba(244, 67, 54, 0.9)'
+                        ],
+                        borderColor: '#2d4a3e',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '📊 Ranking de Eficiencia Ponderada',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.x.toFixed(1) + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: ''
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
     </script>
 </body>
-</html>
-                            
+</html>                    
