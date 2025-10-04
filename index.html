@@ -314,6 +314,13 @@
         .chart-container {
             max-width: 600px;
             margin: 2rem auto;
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+        
+        .chart-container canvas {
+            max-height: 100%;
         }
 
         .team-grid {
@@ -508,6 +515,11 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+            
+            .logo {
+                position: static;
+                margin: 0 auto;
+            }
 
             .nav {
                 flex-wrap: wrap;
@@ -529,6 +541,42 @@
 
             .main-content {
                 padding: 1rem;
+            }
+            
+            .chart-container {
+                height: 300px;
+                margin: 1rem 0;
+                padding: 0 0.5rem;
+            }
+            
+            .match-header {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .match-header .competition-name,
+            .match-header .result-indicator,
+            .match-header .match-date {
+                margin: 0;
+            }
+            
+            .player-stats-container {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .calendar-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .calendar-item > div:last-child {
+                text-align: left !important;
+                width: 100%;
             }
         }
     </style>
@@ -895,9 +943,10 @@
             <div class="chart-container">
                 <canvas id="winnersRankingChart"></canvas>
             </div>
+
             <div class="chart-container">
-    <canvas id="efficiencyRankingChart"></canvas>
-</div>
+                <canvas id="efficiencyRankingChart"></canvas>
+            </div>
 
             <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Tercera Jornada</h3>
             <div class="stats-grid">
@@ -930,62 +979,62 @@
                 <div class="player-card">
                     <div class="player-avatar">OA</div>
                     <h3>Omar Álvarez</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">GB</div>
                     <h3>Gabriel Bárcena</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">GB</div>
                     <h3>Gustavo Barcos</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">SC</div>
                     <h3>Simón Cava</h3>
-                    <p>🤚 IZQ</p>
+                    <p>🤜 IZQ</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">DF</div>
                     <h3>Daniel Figuera</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">CF</div>
                     <h3>Christian Frendín</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">JG</div>
                     <h3>Juan Guinand</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">EJ</div>
                     <h3>Edgar Jaua</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">RL</div>
                     <h3>Ricardo Larrazábal</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">HS</div>
                     <h3>Honorio Sigala</h3>
-                    <p>🤚 DER</p>
+                    <p>🤜 DER</p>
                 </div>
                 <div class="player-card">
                     <div class="player-avatar">AV</div>
                     <h3>Alejandro Villoría</h3>
-                    <p>🤚 IZQ</p>
+                    <p>🤜 IZQ</p>
                 </div>
                 <div class="player-card" style="border: 2px solid #daa520;">
                     <div class="player-avatar" style="background: linear-gradient(135deg, #daa520, #ffeb3b);">G</div>
                     <h3>Génesis</h3>
-                    <p>🏓 MVP</p>
+                    <p>🏅 MVP</p>
                     <p style="font-size: 0.8rem; color: #2d4a3e; font-style: italic;">La pala legendaria de Juan Carlos</p>
                 </div>
             </div>
@@ -1078,7 +1127,7 @@
             <div>
                 <h3>📱 Redes Sociales</h3>
                 <p>Instagram: @premierpadelccs</p>
-                            </div>
+            </div>
             <div>
                 <h3>📋 Información</h3>
                 <p>Reglamento del Equipo</p>
@@ -1086,7 +1135,7 @@
             </div>
         </div>
         <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
-            <p>&copy; 2025 Premier Padel Academy. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Premier Padel Academy. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -1268,14 +1317,23 @@
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
-                                text: 'Evolución del Rendimiento del Equipo'
+                                text: 'Evolución del Rendimiento del Equipo',
+                                font: {
+                                    size: window.innerWidth < 768 ? 12 : 16
+                                }
                             },
                             legend: {
                                 display: true,
-                                position: 'top'
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 10 : 12
+                                    }
+                                }
                             }
                         },
                         scales: {
@@ -1284,7 +1342,24 @@
                                 max: 100,
                                 title: {
                                     display: true,
-                                    text: 'Porcentaje (%)'
+                                    text: 'Porcentaje (%)',
+                                    font: {
+                                        size: window.innerWidth < 768 ? 10 : 12
+                                    }
+                                },
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    },
+                                    maxRotation: window.innerWidth < 768 ? 45 : 0,
+                                    minRotation: window.innerWidth < 768 ? 45 : 0
                                 }
                             }
                         }
@@ -1323,14 +1398,23 @@
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
-                                text: 'Rendimiento de Jugadores con 2+ Partidos'
+                                text: 'Rendimiento de Jugadores con 2+ Partidos',
+                                font: {
+                                    size: window.innerWidth < 768 ? 12 : 16
+                                }
                             },
                             legend: {
                                 display: true,
-                                position: 'top'
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 12
+                                    }
+                                }
                             },
                             tooltip: {
                                 callbacks: {
@@ -1356,9 +1440,17 @@
                                 beginAtZero: true,
                                 title: {
                                     display: true,
-                                    text: 'Cantidad'
+                                    text: 'Cantidad',
+                                    font: {
+                                        size: window.innerWidth < 768 ? 10 : 12
+                                    }
                                 },
-                                position: 'left'
+                                position: 'left',
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    }
+                                }
                             },
                             y1: {
                                 type: 'linear',
@@ -1368,10 +1460,27 @@
                                 max: 100,
                                 title: {
                                     display: true,
-                                    text: 'Eficiencia (%)'
+                                    text: 'Eficiencia (%)',
+                                    font: {
+                                        size: window.innerWidth < 768 ? 10 : 12
+                                    }
                                 },
                                 grid: {
                                     drawOnChartArea: false,
+                                },
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 8 : 11
+                                    },
+                                    maxRotation: window.innerWidth < 768 ? 45 : 0,
+                                    minRotation: window.innerWidth < 768 ? 45 : 0
                                 }
                             }
                         }
@@ -1407,12 +1516,13 @@
                     options: {
                         indexAxis: 'y',
                         responsive: true,
+                        maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
                                 text: '🏆 Ranking de Winners',
                                 font: {
-                                    size: 16
+                                    size: window.innerWidth < 768 ? 12 : 16
                                 }
                             },
                             legend: {
@@ -1424,7 +1534,102 @@
                                 beginAtZero: true,
                                 title: {
                                     display: true,
-                                    text: ''
+                                    text: 'Total de Winners',
+                                    font: {
+                                        size: window.innerWidth < 768 ? 10 : 12
+                                    }
+                                },
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    }
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const ctxEfficiencyRanking = document.getElementById('efficiencyRankingChart');
+            if (ctxEfficiencyRanking) {
+                new Chart(ctxEfficiencyRanking, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Gabriel Bárcena', 'Simón Cava', 'Daniel Figuera', 'Omar Álvarez', 'Christian Frendín', 'Gustavo Barcos', 'Edgar Jaua', 'Honorio Sigala', 'Alejandro Villoría', 'Juan Guinand'],
+                        datasets: [{
+                            label: 'Eficiencia Ponderada (%)',
+                            data: [72.4, 47.7, 42.0, 41.0, 40.6, 39.6, 35.2, 34.8, 33.3, 27.0],
+                            backgroundColor: [
+                                'rgba(76, 175, 80, 0.9)',
+                                'rgba(76, 175, 80, 0.8)',
+                                'rgba(139, 195, 74, 0.8)',
+                                'rgba(139, 195, 74, 0.75)',
+                                'rgba(255, 193, 7, 0.8)',
+                                'rgba(255, 193, 7, 0.75)',
+                                'rgba(255, 152, 0, 0.8)',
+                                'rgba(255, 152, 0, 0.75)',
+                                'rgba(244, 67, 54, 0.8)',
+                                'rgba(244, 67, 54, 0.9)'
+                            ],
+                            borderColor: '#2d4a3e',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: '📊 Ranking de Eficiencia Ponderada',
+                                font: {
+                                    size: window.innerWidth < 768 ? 12 : 16
+                                }
+                            },
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.parsed.x.toFixed(1) + '%';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: {
+                                    display: true,
+                                    text: 'Eficiencia Ponderada (%)',
+                                    font: {
+                                        size: window.innerWidth < 768 ? 10 : 12
+                                    }
+                                },
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%';
+                                    },
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    }
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    font: {
+                                        size: window.innerWidth < 768 ? 9 : 11
+                                    }
                                 }
                             }
                         }
@@ -1432,71 +1637,6 @@
                 });
             }
         });
-        const ctxEfficiencyRanking = document.getElementById('efficiencyRankingChart');
-        if (ctxEfficiencyRanking) {
-            new Chart(ctxEfficiencyRanking, {
-                type: 'bar',
-                data: {
-                    labels: ['Gabriel Bárcena', 'Simón Cava', 'Daniel Figuera', 'Omar Álvarez', 'Christian Frendín', 'Gustavo Barcos', 'Edgar Jaua', 'Honorio Sigala', 'Alejandro Villoría', 'Juan Guinand'],
-                    datasets: [{
-                        label: 'Ranking de efeciencia ponderada (%)',
-                        data: [72.4, 47.7, 42.0, 41.0, 40.6, 39.6, 35.2, 34.8, 33.3, 27.0],
-                        backgroundColor: [
-                            'rgba(76, 175, 80, 0.9)',
-                            'rgba(76, 175, 80, 0.8)',
-                            'rgba(139, 195, 74, 0.8)',
-                            'rgba(139, 195, 74, 0.75)',
-                            'rgba(255, 193, 7, 0.8)',
-                            'rgba(255, 193, 7, 0.75)',
-                            'rgba(255, 152, 0, 0.8)',
-                            'rgba(255, 152, 0, 0.75)',
-                            'rgba(244, 67, 54, 0.8)',
-                            'rgba(244, 67, 54, 0.9)'
-                        ],
-                        borderColor: '#2d4a3e',
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: '📊 Ranking de Eficiencia Ponderada',
-                            font: {
-                                size: 16
-                            }
-                        },
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.parsed.x.toFixed(1) + '%';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            max: 100,
-                            title: {
-                                display: true,
-                                text: ''
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
     </script>
 </body>
-</html>                    
+</html>
