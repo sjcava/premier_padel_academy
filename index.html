@@ -609,9 +609,96 @@
             <div id="matchesContainer">
                 <div class="match-card">
                     <div class="match-header">
+                        <span class="competition-name">Cuarta Jornada</span>
+                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="match-date">16/10/2024</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Premier Padel Academy</div>
+                        </div>
+                        <div class="score">2-1</div>
+                        <div class="players">
+                            <div class="opponent-team">Padelazo</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>3 Partidos Jugados</span>
+                        <span></span>
+                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Estadísticas</button>
+                    </div>
+                    <div class="detailed-stats" id="details-0">
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
+                        
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Ricardo Larrazabal</strong> vs Martín de Armas / Olaff Pérez</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-7, 7-6, 10-6</p>
+                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Omar Álvarez:</strong></p>
+                                    <p class="player-stats">W: 9 | UE: 13 | DF: 0 | Eficiencia: 40.9% | Ef. Ponderada: 40.9%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Ricardo Larrazabal:</strong></p>
+                                    <p class="player-stats">W: 7 | UE: 10 | DF: 0 | Eficiencia: 41.2% | Ef. Ponderada: 41.2%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Daniel Figuera / Christian Frendín</strong> vs Giorgio Bacopulus / Juan Novo</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-7, 7-6, 10-3</p>
+                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Daniel Figuera:</strong></p>
+                                    <p class="player-stats">W: 10 | UE: 10 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Christian Frendín:</strong></p>
+                                    <p class="player-stats">W: 10 | UE: 10 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(244, 67, 54, 0.1); border-radius: 10px;">
+                            <h5 style="color: #d32f2f; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - DERROTA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gabriel Bárcena / Honorio Sigala</strong> vs Isidro Nordelo / José Martí</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 2-6, 6-3, 7-10</p>
+                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Gabriel Bárcena:</strong></p>
+                                    <p class="player-stats">W: 10 | UE: 4 | DF: 0 | Eficiencia: 71.4% | Ef. Ponderada: 71.4%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Honorio Sigala:</strong></p>
+                                    <p class="player-stats">W: 10 | UE: 12 | DF: 0 | Eficiencia: 45.5% | Ef. Ponderada: 45.5%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
+                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 56</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 59</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 0</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 48.7%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 48.7%</p>
+                        </div>
+
+                        <div class="gemini-feature">
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card">
+                    <div class="match-header">
                         <span class="competition-name">Tercera Jornada</span>
                         <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
-                        <span class="match-date">02/10/2025</span>
+                        <span class="match-date">02/10/2024</span>
                     </div>
                     <div class="match-players">
                         <div class="players">
@@ -625,9 +712,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(1)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-0">
+                    <div class="detailed-stats" id="details-1">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
@@ -688,8 +775,8 @@
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 1)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-1" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -698,7 +785,7 @@
                     <div class="match-header">
                         <span class="competition-name">Segunda Jornada</span>
                         <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
-                        <span class="match-date">25/09/2025</span>
+                        <span class="match-date">25/09/2024</span>
                     </div>
                     <div class="match-players">
                         <div class="players">
@@ -712,9 +799,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(1)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(2)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-1">
+                    <div class="detailed-stats" id="details-2">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
@@ -773,8 +860,8 @@
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 45.3%</p>
                         </div>
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 1)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-1" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 2)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-2" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -783,7 +870,7 @@
                     <div class="match-header">
                         <span class="competition-name">Primera Jornada</span>
                         <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
-                        <span class="match-date">18/09/2025</span>
+                        <span class="match-date">18/09/2024</span>
                     </div>
                     <div class="match-players">
                         <div class="players">
@@ -797,9 +884,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(2)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(3)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-2">
+                    <div class="detailed-stats" id="details-3">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
@@ -858,8 +945,8 @@
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 41.7%</p>
                         </div>
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 2)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-2" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 3)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-3" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -870,11 +957,11 @@
             <h2>📊 Estadísticas Destacadas del Equipo</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">4</div>
                     <div class="stat-label">Encuentros Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">4</div>
                     <div class="stat-label">Encuentros Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -882,19 +969,19 @@
                     <div class="stat-label">Encuentros Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">9</div>
+                    <div class="stat-value">12</div>
                     <div class="stat-label">Partidos Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">8</div>
+                    <div class="stat-value">10</div>
                     <div class="stat-label">Partidos Ganados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Partidos Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">16</div>
+                    <div class="stat-value">21</div>
                     <div class="stat-label">Sets Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -902,24 +989,24 @@
                     <div class="stat-label">Sets Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">3</div>
                     <div class="stat-label">Super Tie Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Super Tie Ganados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">1</div>
                     <div class="stat-label">Super Tie Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Remontadas</div>
                     <div style="font-size: 0.7rem; color: #666; font-style: italic; margin-top: 0.3rem;">(habiendo perdido el primer set se gana el partido)</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">4</div>
                     <div class="stat-label">Encuentros Invictos Consecutivos</div>
                 </div>
                 <div class="stat-card">
@@ -946,6 +1033,14 @@
 
             <div class="chart-container">
                 <canvas id="efficiencyRankingChart"></canvas>
+            </div>
+
+            <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Cuarta Jornada</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">Daniel Figuera</div>
+                    <div class="stat-label">W: 10 | UE: 10 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</div>
+                </div>
             </div>
 
             <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Tercera Jornada</h3>
@@ -1049,7 +1144,7 @@
                         <p>VIVORA</p>
                     </div>
                     <div style="text-align: right;">
-                        <strong>18 Septiembre 2025</strong>
+                        <strong>18 Septiembre 2024</strong>
                         <p style="color: #4CAF50; font-weight: bold; margin: 5px 0;">Victoria 2-1</p>
                     </div>
                 </div>
@@ -1059,7 +1154,7 @@
                         <p>VENPLAY</p>
                     </div>
                     <div style="text-align: right;">
-                        <strong>25 Septiembre 2025</strong>
+                        <strong>25 Septiembre 2024</strong>
                         <p style="color: #4CAF50; font-weight: bold; margin: 5px 0;">Victoria 3-0</p>
                     </div>
                 </div>
@@ -1069,7 +1164,7 @@
                         <p>VENPLAY</p>
                     </div>
                     <div style="text-align: right;">
-                        <strong>2 Octubre 2025</strong>
+                        <strong>2 Octubre 2024</strong>
                         <p style="color: #4CAF50; font-weight: bold; margin: 5px 0;">Victoria 3-0</p>
                     </div>
                 </div>
@@ -1079,18 +1174,18 @@
                         <p>Fecha libre - Sin partido</p>
                     </div>
                     <div style="text-align: right;">
-                        <strong>9 Octubre 2025</strong>
+                        <strong>9 Octubre 2024</strong>
                         <p>Descanso</p>
                     </div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item" style="background: rgba(76, 175, 80, 0.1); border-left: 4px solid #4CAF50;">
                     <div>
-                        <h4>🎾 vs PADELAZO</h4>
-                        <p>A DEFINIR</p>
+                        <h4>🏆 vs PADELAZO</h4>
+                        <p>VÍBORA PADEL</p>
                     </div>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
-                        <strong>16 Octubre 2025</strong>
-                        <button class="gemini-button-small" onclick="generateStrategy('PADELAZO')">✨ Generar Estrategia</button>
+                    <div style="text-align: right;">
+                        <strong>16 Octubre 2024</strong>
+                        <p style="color: #4CAF50; font-weight: bold; margin: 5px 0;">Victoria 2-1</p>
                     </div>
                 </div>
                 <div class="calendar-item">
@@ -1293,17 +1388,17 @@
                 new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: ['Primera Jornada', 'Segunda Jornada', 'Tercera Jornada'],
+                        labels: ['Primera Jornada', 'Segunda Jornada', 'Tercera Jornada', 'Cuarta Jornada'],
                         datasets: [{
                             label: 'Eficiencia General (%)',
-                            data: [35.0, 45.7, 41.4],
+                            data: [35.0, 45.7, 41.4, 48.7],
                             borderColor: '#2d4a3e',
                             backgroundColor: 'rgba(45, 74, 62, 0.1)',
                             tension: 0.4,
                             fill: true
                         }, {
                             label: 'Eficiencia Ponderada (%)',
-                            data: [41.7, 45.3, 41.0],
+                            data: [41.7, 45.3, 41.0, 48.7],
                             borderColor: '#daa520',
                             backgroundColor: 'rgba(218, 165, 32, 0.1)',
                             tension: 0.4,
@@ -1370,19 +1465,19 @@
                         labels: ['Gabriel Bárcena', 'Omar Álvarez', 'Simón Cava', 'Christian Frendín', 'Daniel Figuera', 'Edgar Jaua', 'Gustavo Barcos', 'Honorio Sigala'],
                         datasets: [{
                             label: 'Winners (W)',
-                            data: [16, 13, 16, 16, 9, 15, 16, 15],
+                            data: [26, 22, 16, 26, 19, 15, 16, 25],
                             backgroundColor: 'rgba(45, 74, 62, 0.8)',
                             borderColor: '#2d4a3e',
                             borderWidth: 2
                         }, {
                             label: 'Errores No Forzados (UE)',
-                            data: [10, 16, 18, 21, 14, 28, 27, 28],
+                            data: [14, 29, 18, 31, 24, 28, 27, 40],
                             backgroundColor: 'rgba(244, 67, 54, 0.8)',
                             borderColor: '#f44336',
                             borderWidth: 2
                         }, {
                             label: 'Eficiencia Ponderada (%)',
-                            data: [72.4, 41.0, 47.7, 40.6, 42.0, 35.2, 39.6, 34.8],
+                            data: [65.0, 43.1, 47.1, 45.6, 44.2, 34.9, 37.2, 39.1],
                             type: 'line',
                             backgroundColor: 'rgba(218, 165, 32, 0.2)',
                             borderColor: '#daa520',
@@ -1488,10 +1583,10 @@
                 new Chart(ctxWinnersRanking, {
                     type: 'bar',
                     data: {
-                        labels: ['Gabriel Bárcena', 'Simón Cava', 'Christian Frendín', 'Gustavo Barcos', 'Honorio Sigala', 'Edgar Jaua', 'Omar Álvarez', 'Daniel Figuera', 'Juan Guinand', 'Alejandro Villoría'],
+                        labels: ['Gabriel Bárcena', 'Christian Frendín', 'Honorio Sigala', 'Omar Álvarez', 'Daniel Figuera', 'Simón Cava', 'Gustavo Barcos', 'Edgar Jaua', 'Juan Guinand', 'Alejandro Villoría'],
                         datasets: [{
                             label: 'Total Winners (W)',
-                            data: [16, 16, 16, 16, 15, 15, 13, 9, 9, 6],
+                            data: [26, 26, 25, 22, 19, 16, 16, 15, 9, 6],
                             backgroundColor: [
                                 'rgba(218, 165, 32, 0.9)',
                                 'rgba(218, 165, 32, 0.85)',
@@ -1557,10 +1652,10 @@
                 new Chart(ctxEfficiencyRanking, {
                     type: 'bar',
                     data: {
-                        labels: ['Gabriel Bárcena', 'Simón Cava', 'Daniel Figuera', 'Omar Álvarez', 'Christian Frendín', 'Gustavo Barcos', 'Edgar Jaua', 'Honorio Sigala', 'Alejandro Villoría', 'Juan Guinand'],
+                        labels: ['Gabriel Bárcena', 'Simón Cava', 'Christian Frendín', 'Daniel Figuera', 'Omar Álvarez', 'Honorio Sigala', 'Gustavo Barcos', 'Edgar Jaua', 'Alejandro Villoría', 'Juan Guinand'],
                         datasets: [{
                             label: 'Eficiencia Ponderada (%)',
-                            data: [72.4, 47.7, 42.0, 41.0, 40.6, 39.6, 35.2, 34.8, 33.3, 27.0],
+                            data: [65.0, 47.1, 45.6, 44.2, 43.1, 39.1, 37.2, 34.9, 33.3, 27.0],
                             backgroundColor: [
                                 'rgba(76, 175, 80, 0.9)',
                                 'rgba(76, 175, 80, 0.8)',
