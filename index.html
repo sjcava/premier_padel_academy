@@ -607,6 +607,95 @@
         <section class="section" id="resultados">
             <h2>🏆 Últimos Resultados</h2>
             <div id="matchesContainer">
+                
+                <!-- QUINTA JORNADA - NUEVA -->
+                <div class="match-card">
+                    <div class="match-header">
+                        <span class="competition-name">Quinta Jornada</span>
+                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="match-date">23/10/2024</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Premier Padel Academy</div>
+                        </div>
+                        <div class="score">3-0</div>
+                        <div class="players">
+                            <div class="opponent-team">Hogar Canario</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>3 Partidos Jugados</span>
+                        <span></span>
+                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Estadísticas</button>
+                    </div>
+                    <div class="detailed-stats" id="details-0">
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
+                        
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Simon Cava / Daniel Figuera</strong> vs Francisco Mota / Axel Patino</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-3, 3-6, 10-7</p>
+                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Simon Cava:</strong></p>
+                                    <p class="player-stats">W: 6 | UE: 6 | DF: 1 | Eficiencia: 46.2% | Ef. Ponderada: 46.2%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Daniel Figuera:</strong></p>
+                                    <p class="player-stats">W: 8 | UE: 7 | DF: 0 | Eficiencia: 53.3% | Ef. Ponderada: 53.3%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Frendín / Alejandro Villoria</strong> vs Darwyn Blanco / Francisco Pérez</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-1, 3-6, 10-4</p>
+                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Christian Frendín:</strong></p>
+                                    <p class="player-stats">W: 11 | UE: 9 | DF: 0 | Eficiencia: 55.0% | Ef. Ponderada: 55.0%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Alejandro Villoria:</strong></p>
+                                    <p class="player-stats">W: 10 | UE: 7 | DF: 0 | Eficiencia: 58.8% | Ef. Ponderada: 58.8%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Edgar Jaua</strong> vs Jesús Galván / Marlon Márquez</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 7-6, 7-6</p>
+                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                <div style="text-align: center;">
+                                    <p><strong>Gustavo Barcos:</strong></p>
+                                    <p class="player-stats">W: 13 | UE: 12 | DF: 1 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</p>
+                                </div>
+                                <div style="text-align: center;">
+                                    <p><strong>Edgar Jaua:</strong></p>
+                                    <p class="player-stats">W: 11 | UE: 13 | DF: 0 | Eficiencia: 45.8% | Ef. Ponderada: 45.8%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
+                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 59</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 54</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 2</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 51.3%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 51.3%</p>
+                        </div>
+
+                        <div class="gemini-feature">
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Cuarta Jornada</span>
@@ -625,9 +714,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(1)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-0">
+                    <div class="detailed-stats" id="details-1">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
@@ -688,8 +777,8 @@
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 1)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-1" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -712,9 +801,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(1)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(2)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-1">
+                    <div class="detailed-stats" id="details-2">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
@@ -775,8 +864,8 @@
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 1)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-1" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 2)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-2" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -799,9 +888,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(2)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(3)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-2">
+                    <div class="detailed-stats" id="details-3">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
@@ -860,8 +949,8 @@
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 45.3%</p>
                         </div>
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 2)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-2" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 3)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-3" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -884,9 +973,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(3)">Ver Estadísticas</button>
+                        <button class="show-details" onclick="toggleMatchDetails(4)">Ver Estadísticas</button>
                     </div>
-                    <div class="detailed-stats" id="details-3">
+                    <div class="detailed-stats" id="details-4">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
                         
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
@@ -945,8 +1034,8 @@
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 41.7%</p>
                         </div>
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 3)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-3" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 4)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-4" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -957,11 +1046,11 @@
             <h2>📊 Estadísticas Destacadas del Equipo</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
+                    <div class="stat-value">5</div>
                     <div class="stat-label">Encuentros Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
+                    <div class="stat-value">5</div>
                     <div class="stat-label">Encuentros Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -969,11 +1058,11 @@
                     <div class="stat-label">Encuentros Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">12</div>
+                    <div class="stat-value">15</div>
                     <div class="stat-label">Partidos Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">10</div>
+                    <div class="stat-value">13</div>
                     <div class="stat-label">Partidos Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -981,19 +1070,19 @@
                     <div class="stat-label">Partidos Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">19</div>
+                    <div class="stat-value">23</div>
                     <div class="stat-label">Sets Ganados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">5</div>
+                    <div class="stat-value">7</div>
                     <div class="stat-label">Sets Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">5</div>
                     <div class="stat-label">Super Tie Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">4</div>
                     <div class="stat-label">Super Tie Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -1006,7 +1095,7 @@
                     <div style="font-size: 0.7rem; color: #666; font-style: italic; margin-top: 0.3rem;">(habiendo perdido el primer set se gana el partido)</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
+                    <div class="stat-value">5</div>
                     <div class="stat-label">Encuentros Invictos Consecutivos</div>
                 </div>
                 <div class="stat-card">
@@ -1033,6 +1122,14 @@
 
             <div class="chart-container">
                 <canvas id="efficiencyRankingChart"></canvas>
+            </div>
+
+            <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Quinta Jornada</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">Alejandro Villoria</div>
+                    <div class="stat-label">W: 10 | UE: 7 | DF: 0 | Eficiencia: 58.8% | Ef. Ponderada: 58.8%</div>
+                </div>
             </div>
 
             <h3 style="margin: 2rem 0 1rem; color: #2d4a3e;">🏆 Jugador Destacado - Cuarta Jornada</h3>
@@ -1188,14 +1285,14 @@
                         <p style="color: #4CAF50; font-weight: bold; margin: 5px 0;">Victoria 2-1</p>
                     </div>
                 </div>
-                <div class="calendar-item">
+                <div class="calendar-item" style="background: rgba(76, 175, 80, 0.1); border-left: 4px solid #4CAF50;">
                     <div>
-                        <h4>🎾 vs HOGAR CANARIO</h4>
+                        <h4>🏆 vs HOGAR CANARIO</h4>
                         <p>BLACK PADEL</p>
                     </div>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
-                        <strong>23 Octubre 2025</strong>
-                        <button class="gemini-button-small" onclick="generateStrategy('HOGAR CANARIO')">✨ Generar Estrategia</button>
+                    <div style="text-align: right;">
+                        <strong>23 Octubre 2024</strong>
+                        <p style="color: #4CAF50; font-weight: bold; margin: 5px 0;">Victoria 3-0</p>
                     </div>
                 </div>
                 <div class="calendar-item">
