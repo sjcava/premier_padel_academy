@@ -29,7 +29,8 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'API key not configured' });
   }
 
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+  // Updated to latest stable model for 2026
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -41,9 +42,9 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Gemini API error:', errorData);
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json().catch(() => ({}));
+      console.error('Gemini API Details:', JSON.stringify(errorData, null, 2));
+      throw new Error(errorData.error?.message || `Google API Error: ${response.status} ${response.statusText}`);
     }
 
     const result = await response.json();
@@ -53,12 +54,12 @@ export default async function handler(req, res) {
         text: result.candidates[0].content.parts[0].text
       });
     } else {
-      throw new Error("Respuesta inválida de la API");
+      throw new Error("Respuesta inesperada de la API de Google");
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Server Error:', error);
     return res.status(500).json({
-      error: 'Error al generar respuesta',
+      error: 'Error procesando solicitud',
       details: error.message
     });
   }
