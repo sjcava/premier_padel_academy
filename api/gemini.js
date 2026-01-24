@@ -17,19 +17,19 @@ export default async function handler(req, res) {
   }
 
   const { prompt } = req.body;
-  
+
   if (!prompt) {
     return res.status(400).json({ error: 'Prompt is required' });
   }
 
   // Obtener la API key desde las variables de entorno
   const apiKey = process.env.GEMINI_API_KEY;
-  
+
   if (!apiKey) {
     return res.status(500).json({ error: 'API key not configured' });
   }
 
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
   try {
     const response = await fetch(apiUrl, {
@@ -47,17 +47,17 @@ export default async function handler(req, res) {
     }
 
     const result = await response.json();
-    
+
     if (result.candidates && result.candidates[0]?.content?.parts[0]?.text) {
-      return res.status(200).json({ 
-        text: result.candidates[0].content.parts[0].text 
+      return res.status(200).json({
+        text: result.candidates[0].content.parts[0].text
       });
     } else {
       throw new Error("Respuesta inválida de la API");
     }
   } catch (error) {
     console.error('Error:', error);
-    return res.status(500).json({ 
+    return res.status(500).json({
       error: 'Error al generar respuesta',
       details: error.message
     });
