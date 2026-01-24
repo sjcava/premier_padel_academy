@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +54,7 @@
             object-fit: contain;
             border-radius: 10px;
             border: 2px solid #daa520;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .logo-icon {
@@ -62,7 +63,7 @@
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><linearGradient id="shield" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23184a33"/><stop offset="100%" stop-color="%23296849"/></linearGradient></defs><path d="M200 40L360 80L350 200C350 280 280 350 200 350C120 350 50 280 50 200L40 80L200 40Z" fill="url(%23shield)" stroke="%23d4af37" stroke-width="8"/><g fill="%23000"><circle cx="100" cy="90" r="8"/><circle cx="130" cy="80" r="8"/><circle cx="160" cy="85" r="8"/><circle cx="190" cy="82" r="8"/><circle cx="220" cy="88" r="8"/><circle cx="250" cy="95" r="8"/><circle cx="280" cy="102" r="8"/><circle cx="110" cy="120" r="8"/><circle cx="140" cy="115" r="8"/><circle cx="170" cy="118" r="8"/><circle cx="200" cy="115" r="8"/><circle cx="230" cy="122" r="8"/><circle cx="260" cy="128" r="8"/><circle cx="120" cy="150" r="8"/><circle cx="150" cy="145" r="8"/><circle cx="180" cy="148" r="8"/><circle cx="210" cy="145" r="8"/><circle cx="240" cy="152" r="8"/></g><path d="M80 180C80 180 120 160 160 180C200 160 220 180 220 180L200 200C180 190 160 195 140 200L120 190L80 180Z" fill="white" stroke="%23ccc" stroke-width="2"/><ellipse cx="200" cy="220" rx="25" ry="25" fill="white" stroke="%23ccc" stroke-width="3"/><path d="M185 210C190 205 200 208 205 215C210 208 220 205 225 210L215 225C210 220 200 218 195 225L185 210Z" fill="%23333"/><rect x="60" y="290" width="280" height="50" fill="%23184a33" rx="10"/><text x="200" y="318" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">PREMIER</text><text x="200" y="338" font-family="Arial,sans-serif" font-size="18" fill="white" text-anchor="middle">PADEL ACADEMY</text></svg>') center/contain no-repeat;
             border-radius: 10px;
             border: 2px solid #daa520;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .nav {
@@ -79,7 +80,8 @@
             transition: all 0.3s ease;
         }
 
-        .nav a:hover, .nav a.active {
+        .nav a:hover,
+        .nav a.active {
             background: linear-gradient(135deg, #2d4a3e, #4a6d52);
             color: white;
         }
@@ -149,7 +151,7 @@
             border-left: 5px solid #daa520;
             transition: all 0.3s ease;
         }
-        
+
         .match-card:not(:hover) {
             cursor: default;
         }
@@ -318,7 +320,7 @@
             height: 400px;
             width: 100%;
         }
-        
+
         .chart-container canvas {
             max-height: 100%;
         }
@@ -401,13 +403,14 @@
         .gallery-item {
             display: none;
         }
-        
+
         .gemini-feature {
             margin-top: 2rem;
             text-align: center;
         }
 
-        .gemini-button, .gemini-button-small {
+        .gemini-button,
+        .gemini-button-small {
             background: linear-gradient(135deg, #8A2BE2, #4A00E0);
             color: white;
             border: none;
@@ -419,18 +422,20 @@
             transition: all 0.3s ease;
             border: 2px solid #C9A0DC;
         }
-        
+
         .gemini-button-small {
             padding: 0.5rem 1rem;
             font-size: 0.8rem;
         }
 
-        .gemini-button:hover, .gemini-button-small:hover {
+        .gemini-button:hover,
+        .gemini-button-small:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
         }
-        
-        .gemini-button:disabled, .gemini-button-small:disabled {
+
+        .gemini-button:disabled,
+        .gemini-button-small:disabled {
             background: #ccc;
             cursor: not-allowed;
             transform: none;
@@ -449,15 +454,15 @@
         }
 
         .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 2000; 
+            display: none;
+            position: fixed;
+            z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.6);
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(5px);
         }
 
@@ -470,9 +475,9 @@
             max-width: 700px;
             border-radius: 20px;
             position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
-        
+
         .modal-content h3 {
             margin-bottom: 1.5rem;
             color: #2d4a3e;
@@ -515,7 +520,7 @@
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .logo {
                 position: static;
                 margin: 0 auto;
@@ -542,50 +547,51 @@
             .main-content {
                 padding: 1rem;
             }
-            
+
             .chart-container {
                 height: 300px;
                 margin: 1rem 0;
                 padding: 0 0.5rem;
             }
-            
+
             .match-header {
                 flex-wrap: wrap;
                 gap: 0.5rem;
             }
-            
+
             .match-header .competition-name,
             .match-header .result-indicator,
             .match-header .match-date {
                 margin: 0;
             }
-            
+
             .player-stats-container {
                 grid-template-columns: 1fr !important;
             }
-            
+
             .team-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
-            
+
             .calendar-item {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.5rem;
             }
-            
-            .calendar-item > div:last-child {
+
+            .calendar-item>div:last-child {
                 text-align: left !important;
                 width: 100%;
             }
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="header-content">
             <div class="logo">
-                <div class="logo-icon"></div>
+                <img src="premier_padel_logo_real.jpg" alt="Premier Padel Academy Logo" class="logo-image">
             </div>
             <nav class="nav">
                 <a href="#inicio" class="active">Inicio</a>
@@ -607,12 +613,13 @@
         <section class="section" id="resultados">
             <h2>🏆 Últimos Resultados</h2>
             <div id="matchesContainer">
-                
+
                 <!-- SEXTA JORNADA - NUEVA -->
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Sexta Jornada</span>
-                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
                         <span class="match-date">30/10/2024</span>
                     </div>
                     <div class="match-players">
@@ -631,66 +638,91 @@
                     </div>
                     <div class="detailed-stats" id="details-0">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
-                        
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Edgar Jaua</strong> vs Manuel Blanco / Jesús Itriago</p>
+
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Edgar
+                                    Jaua</strong> vs Manuel Blanco / Jesús Itriago</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-3, 7-5</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Omar Álvarez:</strong></p>
-                                    <p class="player-stats">W: 9 | UE: 10 | DF: 1 | Eficiencia: 47.4% | Ef. Ponderada: 45.0%</p>
+                                    <p class="player-stats">W: 9 | UE: 10 | DF: 1 | Eficiencia: 47.4% | Ef. Ponderada:
+                                        45.0%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Edgar Jaua:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 14 | DF: 0 | Eficiencia: 41.7% | Ef. Ponderada: 41.7%</p>
+                                    <p class="player-stats">W: 10 | UE: 14 | DF: 0 | Eficiencia: 41.7% | Ef. Ponderada:
+                                        41.7%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Ricardo Larrazabal / Alejandro Villoria</strong> vs Alexander Jean / Dionisio Martín</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Ricardo Larrazabal / Alejandro
+                                    Villoria</strong> vs Alexander Jean / Dionisio Martín</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-1</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Ricardo Larrazabal:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 8 | DF: 0 | Eficiencia: 55.6% | Ef. Ponderada: 55.6%</p>
+                                    <p class="player-stats">W: 10 | UE: 8 | DF: 0 | Eficiencia: 55.6% | Ef. Ponderada:
+                                        55.6%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Alejandro Villoria:</strong></p>
-                                    <p class="player-stats">W: 9 | UE: 8 | DF: 0 | Eficiencia: 52.9% | Ef. Ponderada: 52.9%</p>
+                                    <p class="player-stats">W: 9 | UE: 8 | DF: 0 | Eficiencia: 52.9% | Ef. Ponderada:
+                                        52.9%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Honorio Sigala</strong> vs José Fernández / Roberto Marques</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Honorio
+                                    Sigala</strong> vs José Fernández / Roberto Marques</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-3</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Gustavo Barcos:</strong></p>
-                                    <p class="player-stats">W: 11 | UE: 12 | DF: 0 | Eficiencia: 47.8% | Ef. Ponderada: 47.8%</p>
+                                    <p class="player-stats">W: 11 | UE: 12 | DF: 0 | Eficiencia: 47.8% | Ef. Ponderada:
+                                        47.8%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Honorio Sigala:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 12 | DF: 0 | Eficiencia: 45.5% | Ef. Ponderada: 45.5%</p>
+                                    <p class="player-stats">W: 10 | UE: 12 | DF: 0 | Eficiencia: 45.5% | Ef. Ponderada:
+                                        45.5%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
-                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL
+                            EQUIPO</h4>
+                        <div
+                            style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 59</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 64</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 1</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 48.0%</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 47.6%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong>
+                                64</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 1
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 48.0%
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada
+                                    General:</strong> 47.6%</p>
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con
+                                IA</button>
                             <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
                         </div>
                     </div>
@@ -700,7 +732,8 @@
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Quinta Jornada</span>
-                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
                         <span class="match-date">23/10/2024</span>
                     </div>
                     <div class="match-players">
@@ -719,66 +752,91 @@
                     </div>
                     <div class="detailed-stats" id="details-1">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
-                        
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Simon Cava / Daniel Figuera</strong> vs Francisco Mota / Axel Patino</p>
+
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Simon Cava / Daniel
+                                    Figuera</strong> vs Francisco Mota / Axel Patino</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-3, 3-6, 10-7</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Simon Cava:</strong></p>
-                                    <p class="player-stats">W: 6 | UE: 6 | DF: 1 | Eficiencia: 46.2% | Ef. Ponderada: 46.2%</p>
+                                    <p class="player-stats">W: 6 | UE: 6 | DF: 1 | Eficiencia: 46.2% | Ef. Ponderada:
+                                        46.2%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Daniel Figuera:</strong></p>
-                                    <p class="player-stats">W: 8 | UE: 7 | DF: 0 | Eficiencia: 53.3% | Ef. Ponderada: 53.3%</p>
+                                    <p class="player-stats">W: 8 | UE: 7 | DF: 0 | Eficiencia: 53.3% | Ef. Ponderada:
+                                        53.3%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Frendín / Alejandro Villoria</strong> vs Darwyn Blanco / Francisco Pérez</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Frendín / Alejandro
+                                    Villoria</strong> vs Darwyn Blanco / Francisco Pérez</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-1, 3-6, 10-4</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Christian Frendín:</strong></p>
-                                    <p class="player-stats">W: 11 | UE: 9 | DF: 0 | Eficiencia: 55.0% | Ef. Ponderada: 55.0%</p>
+                                    <p class="player-stats">W: 11 | UE: 9 | DF: 0 | Eficiencia: 55.0% | Ef. Ponderada:
+                                        55.0%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Alejandro Villoria:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 7 | DF: 0 | Eficiencia: 58.8% | Ef. Ponderada: 58.8%</p>
+                                    <p class="player-stats">W: 10 | UE: 7 | DF: 0 | Eficiencia: 58.8% | Ef. Ponderada:
+                                        58.8%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Edgar Jaua</strong> vs Jesús Galván / Marlon Márquez</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Edgar
+                                    Jaua</strong> vs Jesús Galván / Marlon Márquez</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 7-6, 7-6</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Gustavo Barcos:</strong></p>
-                                    <p class="player-stats">W: 13 | UE: 12 | DF: 1 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</p>
+                                    <p class="player-stats">W: 13 | UE: 12 | DF: 1 | Eficiencia: 50.0% | Ef. Ponderada:
+                                        50.0%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Edgar Jaua:</strong></p>
-                                    <p class="player-stats">W: 11 | UE: 13 | DF: 0 | Eficiencia: 45.8% | Ef. Ponderada: 45.8%</p>
+                                    <p class="player-stats">W: 11 | UE: 13 | DF: 0 | Eficiencia: 45.8% | Ef. Ponderada:
+                                        45.8%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
-                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL
+                            EQUIPO</h4>
+                        <div
+                            style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 59</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 54</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 2</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 51.3%</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 51.3%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong>
+                                54</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 2
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 51.3%
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada
+                                    General:</strong> 51.3%</p>
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 1)">✨ Generar Resumen con IA</button>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 1)">✨ Generar Resumen con
+                                IA</button>
                             <div class="gemini-result" id="summary-result-1" style="display: none;"></div>
                         </div>
                     </div>
@@ -787,7 +845,8 @@
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Cuarta Jornada</span>
-                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
                         <span class="match-date">16/10/2024</span>
                     </div>
                     <div class="match-players">
@@ -806,66 +865,91 @@
                     </div>
                     <div class="detailed-stats" id="details-2">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
-                        
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Ricardo Larrazabal</strong> vs Martín de Armas / Olaff Pérez</p>
+
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Ricardo
+                                    Larrazabal</strong> vs Martín de Armas / Olaff Pérez</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-7, 7-6, 10-6</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Omar Álvarez:</strong></p>
-                                    <p class="player-stats">W: 9 | UE: 13 | DF: 0 | Eficiencia: 40.9% | Ef. Ponderada: 40.9%</p>
+                                    <p class="player-stats">W: 9 | UE: 13 | DF: 0 | Eficiencia: 40.9% | Ef. Ponderada:
+                                        40.9%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Ricardo Larrazabal:</strong></p>
-                                    <p class="player-stats">W: 7 | UE: 10 | DF: 0 | Eficiencia: 41.2% | Ef. Ponderada: 41.2%</p>
+                                    <p class="player-stats">W: 7 | UE: 10 | DF: 0 | Eficiencia: 41.2% | Ef. Ponderada:
+                                        41.2%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Daniel Figuera / Christian Frendín</strong> vs Giorgio Bacopulus / Juan Novo</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Daniel Figuera / Christian
+                                    Frendín</strong> vs Giorgio Bacopulus / Juan Novo</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-7, 7-6, 10-3</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Daniel Figuera:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 10 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</p>
+                                    <p class="player-stats">W: 10 | UE: 10 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada:
+                                        50.0%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Christian Frendín:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 10 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</p>
+                                    <p class="player-stats">W: 10 | UE: 10 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada:
+                                        50.0%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(244, 67, 54, 0.1); border-radius: 10px;">
-                            <h5 style="color: #d32f2f; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - DERROTA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gabriel Bárcena / Honorio Sigala</strong> vs Isidro Nordelo / José Martí</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(244, 67, 54, 0.1); border-radius: 10px;">
+                            <h5 style="color: #d32f2f; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - DERROTA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gabriel Bárcena / Honorio
+                                    Sigala</strong> vs Isidro Nordelo / José Martí</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 2-6, 6-3, 7-10</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Gabriel Bárcena:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 4 | DF: 0 | Eficiencia: 71.4% | Ef. Ponderada: 71.4%</p>
+                                    <p class="player-stats">W: 10 | UE: 4 | DF: 0 | Eficiencia: 71.4% | Ef. Ponderada:
+                                        71.4%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Honorio Sigala:</strong></p>
-                                    <p class="player-stats">W: 10 | UE: 12 | DF: 0 | Eficiencia: 45.5% | Ef. Ponderada: 45.5%</p>
+                                    <p class="player-stats">W: 10 | UE: 12 | DF: 0 | Eficiencia: 45.5% | Ef. Ponderada:
+                                        45.5%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
-                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL
+                            EQUIPO</h4>
+                        <div
+                            style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 56</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 59</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 0</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 48.7%</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 48.7%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong>
+                                59</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 0
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 48.7%
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada
+                                    General:</strong> 48.7%</p>
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 2)">✨ Generar Resumen con IA</button>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 2)">✨ Generar Resumen con
+                                IA</button>
                             <div class="gemini-result" id="summary-result-2" style="display: none;"></div>
                         </div>
                     </div>
@@ -874,7 +958,8 @@
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Tercera Jornada</span>
-                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
                         <span class="match-date">02/10/2024</span>
                     </div>
                     <div class="match-players">
@@ -893,66 +978,91 @@
                     </div>
                     <div class="detailed-stats" id="details-3">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
-                        
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Edgar Jaua / Alejandro Villoría</strong> vs Fredy Anaya / Oswaldo Lecuna</p>
+
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Edgar Jaua / Alejandro
+                                    Villoría</strong> vs Fredy Anaya / Oswaldo Lecuna</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-1, 6-3</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Edgar Jaua:</strong></p>
-                                    <p class="player-stats">W: 7 | UE: 9 | DF: 0 | Eficiencia: 43.8% | Ef. Ponderada: 43.8%</p>
+                                    <p class="player-stats">W: 7 | UE: 9 | DF: 0 | Eficiencia: 43.8% | Ef. Ponderada:
+                                        43.8%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Alejandro Villoría:</strong></p>
-                                    <p class="player-stats">W: 6 | UE: 12 | DF: 0 | Eficiencia: 33.3% | Ef. Ponderada: 33.3%</p>
+                                    <p class="player-stats">W: 6 | UE: 12 | DF: 0 | Eficiencia: 33.3% | Ef. Ponderada:
+                                        33.3%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Christian Frendín</strong> vs José De La Blanca / German Olavarria</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Christian
+                                    Frendín</strong> vs José De La Blanca / German Olavarria</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-1</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Omar Álvarez:</strong></p>
-                                    <p class="player-stats">W: 9 | UE: 9 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada: 50.0%</p>
+                                    <p class="player-stats">W: 9 | UE: 9 | DF: 0 | Eficiencia: 50.0% | Ef. Ponderada:
+                                        50.0%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Christian Frendín:</strong></p>
-                                    <p class="player-stats">W: 9 | UE: 10 | DF: 0 | Eficiencia: 47.4% | Ef. Ponderada: 47.4%</p>
+                                    <p class="player-stats">W: 9 | UE: 10 | DF: 0 | Eficiencia: 47.4% | Ef. Ponderada:
+                                        47.4%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Simón Cava</strong> vs Andrés Octavio / Daniel Passaro</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Simón
+                                    Cava</strong> vs Andrés Octavio / Daniel Passaro</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-1, 6-3</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Gustavo Barcos:</strong></p>
-                                    <p class="player-stats">W: 8 | UE: 15 | DF: 0 | Eficiencia: 34.8% | Ef. Ponderada: 34.8%</p>
+                                    <p class="player-stats">W: 8 | UE: 15 | DF: 0 | Eficiencia: 34.8% | Ef. Ponderada:
+                                        34.8%</p>
                                 </div>
                                 <div style="text-align: center;">
                                     <p><strong>Simón Cava:</strong></p>
-                                    <p class="player-stats">W: 7 | UE: 10 | DF: 1 | Eficiencia: 41.2% | Ef. Ponderada: 38.9%</p>
+                                    <p class="player-stats">W: 7 | UE: 10 | DF: 1 | Eficiencia: 41.2% | Ef. Ponderada:
+                                        38.9%</p>
                                 </div>
                             </div>
                         </div>
 
-                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
-                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL
+                            EQUIPO</h4>
+                        <div
+                            style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 46</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 65</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 1</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 41.4%</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 41.0%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong>
+                                65</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Dobles Faltas (DF):</strong> 1
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 41.4%
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada
+                                    General:</strong> 41.0%</p>
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 3)">✨ Generar Resumen con IA</button>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 3)">✨ Generar Resumen con
+                                IA</button>
                             <div class="gemini-result" id="summary-result-3" style="display: none;"></div>
                         </div>
                     </div>
@@ -961,7 +1071,8 @@
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Segunda Jornada</span>
-                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
                         <span class="match-date">25/09/2024</span>
                     </div>
                     <div class="match-players">
@@ -980,12 +1091,16 @@
                     </div>
                     <div class="detailed-stats" id="details-4">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
-                        
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Daniel Figuera</strong> vs Juan Méndez / Enrique Velázquez</p>
+
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Daniel
+                                    Figuera</strong> vs Juan Méndez / Enrique Velázquez</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-2</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Omar Álvarez:</strong></p>
                                     <p class="player-stats">W: 4 | UE: 7 | Eficiencia: 36.4% | Ef. Ponderada: 32.0%</p>
@@ -997,11 +1112,15 @@
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gabriel Bárcena / Simón Cava</strong> vs Juan Agudelo / Erasmo García</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gabriel Bárcena / Simón
+                                    Cava</strong> vs Juan Agudelo / Erasmo García</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-2</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Gabriel Bárcena:</strong></p>
                                     <p class="player-stats">W: 10 | UE: 7 | Eficiencia: 58.8% | Ef. Ponderada: 64.7%</p>
@@ -1013,11 +1132,15 @@
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Frendín / Honorio Sigala</strong> vs Miguel Andrade / José Agudelo</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Frendín / Honorio
+                                    Sigala</strong> vs Miguel Andrade / José Agudelo</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-4, 6-4</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Christian Frendín:</strong></p>
                                     <p class="player-stats">W: 7 | UE: 11 | Eficiencia: 38.9% | Ef. Ponderada: 33.8%</p>
@@ -1029,15 +1152,21 @@
                             </div>
                         </div>
 
-                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
-                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL
+                            EQUIPO</h4>
+                        <div
+                            style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 42</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 50</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 45.7%</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 45.3%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong>
+                                50</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 45.7%
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada
+                                    General:</strong> 45.3%</p>
                         </div>
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 4)">✨ Generar Resumen con IA</button>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 4)">✨ Generar Resumen con
+                                IA</button>
                             <div class="gemini-result" id="summary-result-4" style="display: none;"></div>
                         </div>
                     </div>
@@ -1046,7 +1175,8 @@
                 <div class="match-card">
                     <div class="match-header">
                         <span class="competition-name">Primera Jornada</span>
-                        <span class="result-indicator victory" style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
                         <span class="match-date">18/09/2024</span>
                     </div>
                     <div class="match-players">
@@ -1065,12 +1195,16 @@
                     </div>
                     <div class="detailed-stats" id="details-5">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
-                        
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Daniel Figuera / Gabriel Bárcena</strong> vs Raul Reinoso / Alfredo Puglia</p>
+
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Daniel Figuera / Gabriel
+                                    Bárcena</strong> vs Raul Reinoso / Alfredo Puglia</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-0, 6-0</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Daniel Figuera:</strong></p>
                                     <p class="player-stats">W: 3 | UE: 7 | Eficiencia: 30.0% | Ef. Ponderada: 36.0%</p>
@@ -1082,11 +1216,15 @@
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Honorio Sigala / Gustavo Barcos</strong> vs Francisco Mazzone / Carlos Vargas</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Honorio Sigala / Gustavo
+                                    Barcos</strong> vs Francisco Mazzone / Carlos Vargas</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-4, 6-4</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Honorio Sigala:</strong></p>
                                     <p class="player-stats">W: 9 | UE: 18 | Eficiencia: 33.3% | Ef. Ponderada: 36.6%</p>
@@ -1098,11 +1236,15 @@
                             </div>
                         </div>
 
-                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(244, 67, 54, 0.1); border-radius: 10px;">
-                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - DERROTA</h5>
-                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Juan Guinand / Edgar Jaua</strong> vs Mario Fapore / Marcelo Tarre</p>
+                        <div class="pair-result"
+                            style="margin: 1rem 0; padding: 1rem; background: rgba(244, 67, 54, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - DERROTA
+                            </h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Juan Guinand / Edgar
+                                    Jaua</strong> vs Mario Fapore / Marcelo Tarre</p>
                             <p style="text-align: center;"><strong>Resultado:</strong> 4-6, 5-7</p>
-                            <div class="player-stats-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="player-stats-container"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                                 <div style="text-align: center;">
                                     <p><strong>Juan Guinand:</strong></p>
                                     <p class="player-stats">W: 9 | UE: 21 | Eficiencia: 30.0% | Ef. Ponderada: 27.0%</p>
@@ -1114,15 +1256,21 @@
                             </div>
                         </div>
 
-                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL EQUIPO</h4>
-                        <div style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
+                        <h4 style="margin: 1.5rem 0 1rem; color: #2d4a3e; text-align: center;">ESTADÍSTICAS TOTALES DEL
+                            EQUIPO</h4>
+                        <div
+                            style="text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.3); border-radius: 10px;">
                             <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Winners (W):</strong> 43</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong> 80</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 35.0%</p>
-                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada General:</strong> 41.7%</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Total Unforced Errors (UE):</strong>
+                                80</p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia General:</strong> 35.0%
+                            </p>
+                            <p style="margin: 0.5rem 0; font-size: 1.1rem;"><strong>Eficiencia Ponderada
+                                    General:</strong> 41.7%</p>
                         </div>
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 5)">✨ Generar Resumen con IA</button>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 5)">✨ Generar Resumen con
+                                IA</button>
                             <div class="gemini-result" id="summary-result-5" style="display: none;"></div>
                         </div>
                     </div>
@@ -1180,7 +1328,8 @@
                 <div class="stat-card">
                     <div class="stat-value">2</div>
                     <div class="stat-label">Remontadas</div>
-                    <div style="font-size: 0.7rem; color: #666; font-style: italic; margin-top: 0.3rem;">(habiendo perdido el primer set se gana el partido)</div>
+                    <div style="font-size: 0.7rem; color: #666; font-style: italic; margin-top: 0.3rem;">(habiendo
+                        perdido el primer set se gana el partido)</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">6</div>
@@ -1195,7 +1344,7 @@
                     <div class="stat-label">Cantidad de Cervezas</div>
                 </div>
             </div>
-            
+
             <div class="chart-container">
                 <canvas id="performanceChart"></canvas>
             </div>
@@ -1323,7 +1472,8 @@
                     <div class="player-avatar" style="background: linear-gradient(135deg, #daa520, #ffeb3b);">G</div>
                     <h3>Génesis</h3>
                     <p>🏅 MVP</p>
-                    <p style="font-size: 0.8rem; color: #2d4a3e; font-style: italic;">La pala legendaria de Juan Carlos</p>
+                    <p style="font-size: 0.8rem; color: #2d4a3e; font-style: italic;">La pala legendaria de Juan Carlos
+                    </p>
                 </div>
             </div>
         </section>
@@ -1450,7 +1600,7 @@
                     }
 
                     const result = await response.json();
-                    
+
                     if (result.text) {
                         return result.text;
                     } else if (result.error) {
@@ -1482,7 +1632,7 @@
             const ourTeam = matchCard.querySelector('.our-team').innerText;
             const opponentTeam = matchCard.querySelector('.opponent-team').innerText;
             const score = matchCard.querySelector('.score').innerText;
-            
+
             let playerStatsText = '';
             const pairResults = matchCard.querySelectorAll('.pair-result');
             pairResults.forEach(pair => {
@@ -1504,7 +1654,7 @@
                 ${playerStatsText}
                 Finaliza con una nota positiva para el equipo ganador, Premier Padel Academy.
             `;
-            
+
             const summary = await callGemini(prompt);
             resultDiv.innerHTML = summary;
             button.style.display = 'none';
@@ -1534,7 +1684,7 @@
             modal.style.display = "none";
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 closeModal();
             }
@@ -1544,7 +1694,7 @@
             const detailsDiv = document.getElementById(`details-${matchIndex}`);
             const buttons = document.querySelectorAll('.show-details');
             const button = buttons[matchIndex];
-            
+
             if (detailsDiv && button) {
                 if (detailsDiv.classList.contains('show')) {
                     detailsDiv.classList.remove('show');
@@ -1557,14 +1707,14 @@
         }
 
         function scrollToResults() {
-            document.getElementById('resultados').scrollIntoView({ 
-                behavior: 'smooth' 
+            document.getElementById('resultados').scrollIntoView({
+                behavior: 'smooth'
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.nav a').forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
@@ -1701,7 +1851,7 @@
                             },
                             tooltip: {
                                 callbacks: {
-                                    afterBody: function(context) {
+                                    afterBody: function (context) {
                                         if (context[0].datasetIndex === 1) {
                                             const player = context[0].label;
                                             if (player === 'Gabriel Bárcena') return 'Primera: 3 UE | Segunda: 7 UE';
@@ -1884,7 +2034,7 @@
                             },
                             tooltip: {
                                 callbacks: {
-                                    label: function(context) {
+                                    label: function (context) {
                                         return context.parsed.x.toFixed(1) + '%';
                                     }
                                 }
@@ -1902,7 +2052,7 @@
                                     }
                                 },
                                 ticks: {
-                                    callback: function(value) {
+                                    callback: function (value) {
                                         return value + '%';
                                     },
                                     font: {
@@ -1924,4 +2074,5 @@
         });
     </script>
 </body>
+
 </html>
