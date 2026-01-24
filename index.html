@@ -584,6 +584,138 @@
                 width: 100%;
             }
         }
+
+        /* Ranking Table Styles */
+        .ranking-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .ranking-header {
+            background: linear-gradient(135deg, #2d4a3e 0%, #1a2e20 100%);
+            color: #FFFFFF;
+            padding: 24px;
+            text-align: center;
+            border-bottom: 4px solid #daa520;
+        }
+
+        .ranking-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: white !important;
+        }
+
+        .ranking-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: #e8e8e8;
+        }
+
+        .ranking-table-responsive {
+            overflow-x: auto;
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        .ranking-table thead {
+            background: rgba(45, 74, 62, 0.1);
+            color: #2d4a3e;
+        }
+
+        .ranking-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #daa520;
+        }
+
+        .ranking-table th:first-child {
+            text-align: center;
+        }
+
+        .ranking-table th:last-child {
+            text-align: right;
+        }
+
+        .ranking-table tbody tr {
+            border-bottom: 1px solid rgba(218, 165, 32, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .ranking-table tbody tr:hover {
+            background: rgba(218, 165, 32, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .ranking-table td {
+            padding: 14px 16px;
+            vertical-align: middle;
+        }
+
+        .rank-pos {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #666;
+            min-width: 50px;
+        }
+
+        .rank-pos.top-3 {
+            background: linear-gradient(135deg, #daa520, #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.3rem;
+            filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+        }
+
+        .rank-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .rank-stat {
+            text-align: center;
+            color: #555;
+        }
+
+        .rank-points {
+            text-align: right;
+            font-weight: 700;
+            color: #2d4a3e;
+            font-size: 1.1rem;
+        }
+
+        .rank-points.top-3 {
+            color: #daa520;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ranking-table tbody tr {
+            animation: slideUp 0.5s ease forwards;
+        }
     </style>
 </head>
 
