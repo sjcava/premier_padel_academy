@@ -1945,9 +1945,9 @@
                     if (isLoadingAudio) return;
 
                     try {
-                        isLoadingAudio = true;
-                        ttsBtn.innerHTML = '🎙️ Creando guion de radio...';
-                        ttsBtn.disabled = true;
+            isLoadingAudio = true;
+            ttsBtn.innerHTML = '🎙️ Creando resumen...';
+            ttsBtn.disabled = true;
 
                         // Paso 1: Condensar texto con Gemini (Ahorro de Tokens)
                         // Sanitize summary to avoid breaking the prompt
