@@ -1916,6 +1916,7 @@
                 Destaca la actuación de los jugadores clave y los momentos decisivos del partido. Aquí están los datos de los jugadores:
                 ${playerStatsText}
                 Finaliza con una nota positiva para el equipo ganador, Premier Padel Academy.
+                IMPORTANTE: No uses asteriscos (**), negritas ni caracteres especiales de formato. Escribe solo texto plano y fluido.
             `;
 
             const summary = await callGemini(prompt);
@@ -1924,7 +1925,7 @@
             // TTS Integration (ElevenLabs with Radio Script Optimization)
             if (true) {
                 const ttsBtn = document.createElement('button');
-                ttsBtn.innerHTML = '🔊 Escuchar Resumen (Optimizado)';
+                ttsBtn.innerHTML = '🔊 Escuchar Resumen';
                 ttsBtn.className = 'gemini-button-small';
                 ttsBtn.style.marginTop = '1rem';
                 ttsBtn.style.background = 'linear-gradient(135deg, #2d4a3e, #4a6d52)';
@@ -1937,7 +1938,7 @@
                     if (audio && !audio.paused) {
                         audio.pause();
                         audio.currentTime = 0;
-                        ttsBtn.innerHTML = '🔊 Escuchar Resumen (Optimizado)';
+                        ttsBtn.innerHTML = '🔊 Escuchar Resumen';
                         return;
                     }
 
