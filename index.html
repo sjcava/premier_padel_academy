@@ -1921,10 +1921,10 @@
             const summary = await callGemini(prompt);
             resultDiv.innerHTML = summary;
 
-            // TTS Integration (ElevenLabs)
+            // TTS Integration (ElevenLabs with Radio Script Optimization)
             if (true) {
                 const ttsBtn = document.createElement('button');
-                ttsBtn.innerHTML = '🔊 Escuchar Resumen';
+                ttsBtn.innerHTML = '🔊 Escuchar Resumen (Optimizado)';
                 ttsBtn.className = 'gemini-button-small';
                 ttsBtn.style.marginTop = '1rem';
                 ttsBtn.style.background = 'linear-gradient(135deg, #2d4a3e, #4a6d52)';
@@ -1937,7 +1937,7 @@
                     if (audio && !audio.paused) {
                         audio.pause();
                         audio.currentTime = 0;
-                        ttsBtn.innerHTML = '🔊 Escuchar Resumen';
+                        ttsBtn.innerHTML = '🔊 Escuchar Resumen (Optimizado)';
                         return;
                     }
 
@@ -1945,10 +1945,35 @@
 
                     try {
                         isLoadingAudio = true;
-                        ttsBtn.innerHTML = '⏳ Cargando voz...';
+                        ttsBtn.innerHTML = '🎙️ Creando guion de radio...';
                         ttsBtn.disabled = true;
 
-                        // Call ElevenLabs API directly using provided credentials
+                        // Paso 1: Condensar texto con Gemini (Ahorro de Tokens)
+                        // Sanitize summary to avoid breaking the prompt
+                        const cleanSummary = summary.replace(/`/g, "'").replace(/\$/g, "");
+
+                        const condensationPrompt = `
+                Como experto en radio, resume el siguiente texto en un guion de EXACTAMENTE 40 SEGUNDOS (aprox. 80-100 palabras).
+                OBJETIVO: Que sea emocionante, directo y corto.
+                REGLA: No repitas todo. Solo menciona el resultado y al MVP.
+                TEXTO A RESUMIR:
+                "${cleanSummary}"
+                
+                GUION FINAL:
+            `;
+
+                        let radioScript = await callGemini(condensationPrompt);
+
+                        if (!radioScript) throw new Error("Falló la condensación del guion");
+
+                        // Safety check: If script is too long, truncate it to save costs/time
+                        if (radioScript.length > 800) {
+                            radioScript = radioScript.substring(0, 797) + "...";
+                        }
+
+                        // Paso 2: Generar Audio con ElevenLabs usando el guion corto
+                        ttsBtn.innerHTML = '⏳ Generando voz...';
+
                         const voiceId = '8wQoncWiYYacYpVxvgWo';
                         const apiKey = 'cc0ec27b93384ddaa5507565e7f689d25a45ee010cf83d1ce718709642cca032';
 
@@ -1960,7 +1985,7 @@
                                 'xi-api-key': apiKey
                             },
                             body: JSON.stringify({
-                                text: summary,
+                                text: radioScript, // Enviamos el guion corto, no el resumen largo
                                 model_id: "eleven_multilingual_v2",
                                 voice_settings: {
                                     stability: 0.5,
@@ -1982,7 +2007,7 @@
                         } else {
                             audio = new Audio(url);
                             audio.onended = () => {
-                                ttsBtn.innerHTML = '🔊 Escuchar Resumen';
+                                ttsBtn.innerHTML = '🔊 Escuchar Resumen (Optimizado)';
                             };
                         }
 
