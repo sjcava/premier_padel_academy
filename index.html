@@ -633,7 +633,8 @@
 
         .ranking-table th {
             padding: 16px;
-            text-align: left;
+            text-align: center;
+            /* Default to center for stats */
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.9rem;
@@ -641,12 +642,14 @@
             border-bottom: 2px solid #daa520;
         }
 
-        .ranking-table th:first-child {
-            text-align: center;
+        .ranking-table th:nth-child(2) {
+            padding-left: 2rem;
+            /* Indent header to match visual center of names */
         }
 
         .ranking-table th:last-child {
             text-align: right;
+            /* Keep Ranking right aligned */
         }
 
         .ranking-table tbody tr {
