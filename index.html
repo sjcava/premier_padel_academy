@@ -2107,12 +2107,16 @@
 
                     if (isLoadingAudio) return;
 
-                    // Initialize audio immediately to capture user gesture (Critical for iOS/Mobile)
+                    // Silent Audio Unlock Strategy (Works for both Mobile & Desktop)
+                    const SILENT_MP3 = 'data:audio/mp3;base64,SUQzBAAAAAAAI1RTSSEAAAAAPBNjb21tZW50cwAXXXXXXX0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000//5QAAAAAA//uQZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWgAAAA0Il90kQAD4AABAAAAAAAAAA//uQZAAABAAAAAAAAAAAAAAEAAAAAAAAAAAAA//uQZAAAAAAA';
+
                     if (!audio) {
                         audio = new Audio();
-                        // Optional debug
-                        console.log('Audio initialized on click');
                     }
+
+                    // Pre-play silent audio immediately to keep the gesture alive
+                    audio.src = SILENT_MP3;
+                    audio.play().catch(e => console.log("Silent audio unlock failed (minor)", e));
 
                     try {
                         isLoadingAudio = true;
@@ -2186,9 +2190,15 @@
                             ttsBtn.innerHTML = '⏹ Detener Audio';
                         } catch (playError) {
                             console.error("Playback failed:", playError);
-                            alert("El audio se generó pero el navegador bloqueó la reproducción automática. Intenta hacer clic de nuevo.");
-                            ttsBtn.innerHTML = '▶️ Reproducir (Listo)';
-                            // If autoplay blocked, leave it ready to play on next click logic
+
+                            // Handle Autoplay Block specifically
+                            if (playError.name === 'NotAllowedError') {
+                                alert("El navegador bloqueó la reproducción automática. Haz clic de nuevo en 'Reproducir' para escuchar.");
+                                ttsBtn.innerHTML = '▶️ Reproducir (Listo)';
+                            } else {
+                                alert("Error reproduciendo audio: " + playError.message);
+                                ttsBtn.innerHTML = '▶️ Intentar de nuevo';
+                            }
                         }
 
                     } catch (error) {
