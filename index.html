@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premier Padel Academy</title>
     <!-- Redirect to the main app after 5 seconds -->
-    <meta http-equiv="refresh" content="5;url=dashboard.html">
+    <meta http-equiv="refresh" content="3;url=dashboard.html">
     <style>
         body {
             margin: 0;
@@ -27,7 +27,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            animation: fadeInOut 5s forwards;
+            animation: fadeInOut 3s forwards;
             padding: 2rem;
             text-align: center;
         }
@@ -63,7 +63,7 @@
             height: 100%;
             background: #daa520;
             width: 0%;
-            animation: loadProgress 4.5s ease-in-out forwards;
+            animation: loadProgress 2.5s ease-in-out forwards;
         }
 
         @keyframes fadeInOut {
@@ -170,7 +170,7 @@
             // Fallback JS redirect inside scripts just in case meta refresh is blocked or slow
             setTimeout(() => {
                 window.location.href = 'dashboard.html';
-            }, 5000);
+            }, 3000);
         })();
     </script>
 </body>
