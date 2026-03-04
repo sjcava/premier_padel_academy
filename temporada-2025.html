@@ -2159,12 +2159,28 @@
                         const cleanSummary = typeof summary === 'string' ? summary.replace(/`/g, "'").replace(/\$/g, "") : "Resumen no disponible";
 
                         const condensationPrompt = `
-                            Como experto en radio, resume el siguiente texto en un guion de EXACTAMENTE 40 SEGUNDOS (aprox. 80-100 palabras).
-                            OBJETIVO: Que sea emocionante, directo y corto.
-                            REGLA: No repitas todo. Solo menciona el resultado y al MVP.
+                            Eres un locutor radial latino, seductor, pícaro y con una lengua de oro. 
+                            Tu misión es resumir el siguiente texto en un guion de EXACTAMENTE 40 SEGUNDOS (aprox. 80-100 palabras).
+
+                            ESTILO OBLIGATORIO:
+                            - Habla como si estuvieras coqueteando con la audiencia — cálido, atrevido y con doble sentido elegante.
+                            - Lanza piropos y alabanzas al MVP o protagonista: exagera sus virtudes con pasión y picardía.
+                            - Usa frases sugerentes, calientes y pícaras pero con clase — nada vulgar, todo con sabor.
+                            - El tono debe sentirse como una voz que susurra algo prohibido pero delicioso.
+                            - Español latino neutro.
+
+                            REGLAS DE CONTENIDO:
+                            - Solo menciona el resultado final y al MVP/protagonist.
+                            - No repitas información. Ve directo al clímax de la historia.
+                            - Cada palabra debe tener peso, sabor y ritmo.
+
+                            EJEMPLO DE TONO (no copies esto, solo úsalo de guía):
+                            "Y ahí estaba él... con esa sonrisa que desarma y esos números que hacen suspirar. 
+                            Esta noche, [Nombre] no solo ganó — sedujo a cada estadística hasta que cayeron rendidas a sus pies."
+
                             TEXTO A RESUMIR:
                             "${cleanSummary}"
-                            
+
                             GUION FINAL:
                         `;
 
