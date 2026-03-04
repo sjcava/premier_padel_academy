@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   }
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
-  const voiceId = voice_id || 'ErXwobaYiN019PkySvjV'; // Default voice if not provided
+  const voiceId = voice_id || '21m00Tcm4TlvDq8ikWAM'; // Default voice Rachel si no hay una especificada
 
   if (!apiKey) {
     console.error('Missing ELEVENLABS_API_KEY');
