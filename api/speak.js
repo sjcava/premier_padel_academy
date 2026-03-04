@@ -61,8 +61,8 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('Server Error:', error);
     return res.status(500).json({
-      error: 'Error generating audio',
-      details: error.message
+      error: error.message || 'Error generating audio',
+      details: error.stack
     });
   }
 }
