@@ -76,6 +76,43 @@
             text-shadow: none;
         }
 
+        .btn-season-2025 {
+            position: relative;
+        }
+
+        .badge-campeones {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: linear-gradient(135deg, #FFD700, #FDB931);
+            color: #1a2e20;
+            font-size: 0.75rem;
+            font-weight: 900;
+            padding: 5px 12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            border: 2px solid white;
+            letter-spacing: 1px;
+            transform: rotate(5deg);
+            z-index: 2;
+            animation: pulseBadge 2s infinite;
+        }
+
+        @keyframes pulseBadge {
+            0% {
+                transform: rotate(5deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(5deg) scale(1.05);
+                box-shadow: 0 6px 15px rgba(255, 215, 0, 0.6);
+            }
+
+            100% {
+                transform: rotate(5deg) scale(1);
+            }
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -100,7 +137,10 @@
         <img src="premier_padel_dentro_de_cancha.png" alt="Premier Padel Academy Logo" class="logo-gif">
         <div class="season-buttons">
             <a href="dashboard.html" class="btn-season">Temporada 2026</a>
-            <a href="temporada-2025.html" class="btn-season">Temporada 2025</a>
+            <a href="temporada-2025.html" class="btn-season btn-season-2025">
+                Temporada 2025
+                <span class="badge-campeones">🏆 CAMPEONES</span>
+            </a>
         </div>
     </div>
 
