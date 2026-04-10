@@ -936,6 +936,11 @@
                             <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 4-6, 10-5</p>
                             <div style="text-align: center; font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9em;">(Estadísticas detalladas no disponibles para este partido)</div>
                         </div>
+
+                        <div class="gemini-feature">
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1418,14 +1423,21 @@
             const pairResults = matchCard.querySelectorAll('.pair-result');
             pairResults.forEach(pair => {
                 const pairText = pair.querySelector('h5').innerText;
-                const players = pair.querySelector('p > strong').innerText;
+                const pTags = pair.querySelectorAll('p');
+                const players = pTags.length > 0 ? pTags[0].innerText : '';
+                const pairResult = pTags.length > 1 ? pTags[1].innerText : '';
+                
                 const statsNodes = pair.querySelectorAll('.player-stats');
                 let individualStats = '';
-                statsNodes.forEach(node => {
-                    const playerName = node.previousElementSibling.innerText;
-                    individualStats += `${playerName} ${node.innerText}. `;
-                });
-                playerStatsText += `\n- ${players} (${pairText}): ${individualStats}`;
+                if (statsNodes.length > 0) {
+                    statsNodes.forEach(node => {
+                        const playerName = node.previousElementSibling.innerText;
+                        individualStats += `${playerName} ${node.innerText}. `;
+                    });
+                } else {
+                    individualStats = "(Estadísticas individuales no disponibles para este encuentro)";
+                }
+                playerStatsText += `\n- ${players} (${pairText}). ${pairResult}. ${individualStats}`;
             });
 
             const prompt = `
