@@ -1440,12 +1440,29 @@
                 playerStatsText += `\n- ${players} (${pairText}). ${pairResult}. ${individualStats}`;
             });
 
+            const scores = score.split('-');
+            let ourScore = 0, opponentScore = 0;
+            if (scores.length === 2) {
+                ourScore = parseInt(scores[0]);
+                opponentScore = parseInt(scores[1]);
+            }
+            const weWon = ourScore > opponentScore;
+            
+            const resultContext = weWon 
+                ? `El resultado final fue una VICTORIA de ${score} a favor de nuestro equipo ${ourTeam}.` 
+                : `El resultado final fue una DERROTA de ${score} a favor del equipo contrario ${opponentTeam}.`;
+            
+            const endingNote = weWon
+                ? "Finaliza con una nota de gran celebración para nuestro equipo ganador, Premier Padel Academy."
+                : "Finaliza con una nota de aliento, resaltando el esfuerzo guerrero de nuestro equipo Premier Padel Academy frente a la derrota.";
+
             const prompt = `
                 Actúa como un cronista deportivo especializado en pádel. Basado en las siguientes estadísticas del partido entre ${ourTeam} y ${opponentTeam}, escribe un resumen vibrante y conciso del enfrentamiento en español.
-                El resultado final fue de ${score} a favor de ${ourTeam}.
+                ${resultContext}
                 Destaca la actuación de los jugadores clave y los momentos decisivos del partido. Aquí están los datos de los jugadores:
                 ${playerStatsText}
-                Finaliza con una nota positiva para el equipo ganador, Premier Padel Academy.
+                ${endingNote}
+                Ten siempre presente que tu lealtad es total hacia nuestro equipo: Premier Padel Academy (PPCA). Trátalos como los héroes absolutos de la jornada, incluso en las derrotas.
                 IMPORTANTE: No uses asteriscos (**), negritas ni caracteres especiales de formato. Escribe solo texto plano y fluido.
             `;
 
