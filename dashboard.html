@@ -1719,24 +1719,25 @@
             const ctx = document.getElementById('performanceChart');
             if (ctx) {
                 new Chart(ctx, {
-                    type: 'line',
+                    type: 'bar',
                     data: {
-                        labels: ['Primera Jornada', 'Segunda Jornada', 'Tercera Jornada', 'Cuarta Jornada', 'Quinta Jornada', 'Sexta Jornada'],
-                        datasets: [{
-                            label: 'Eficiencia General (%)',
-                            data: [],
-                            borderColor: '#2d4a3e',
-                            backgroundColor: 'rgba(45, 74, 62, 0.1)',
-                            tension: 0.4,
-                            fill: true
-                        }, {
-                            label: 'Eficiencia Ponderada (%)',
-                            data: [],
-                            borderColor: '#daa520',
-                            backgroundColor: 'rgba(218, 165, 32, 0.1)',
-                            tension: 0.4,
-                            fill: true
-                        }]
+                        labels: ['Jornada 1 (vs ATCA)', 'Jornada 2 (vs LPCA)'],
+                        datasets: [
+                            {
+                                label: 'Partidos Ganados',
+                                data: [1, 2],
+                                backgroundColor: 'rgba(76, 175, 80, 0.8)',
+                                borderColor: '#4CAF50',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Partidos Perdidos',
+                                data: [2, 1],
+                                backgroundColor: 'rgba(244, 67, 54, 0.8)',
+                                borderColor: '#f44336',
+                                borderWidth: 1
+                            }
+                        ]
                     },
                     options: {
                         responsive: true,
@@ -1744,46 +1745,17 @@
                         plugins: {
                             title: {
                                 display: true,
-                                text: 'Evolución del Rendimiento del Equipo',
-                                font: {
-                                    size: window.innerWidth < 768 ? 12 : 16
-                                }
+                                text: '📈 Evolución del Equipo por Jornada',
+                                font: { size: window.innerWidth < 768 ? 12 : 16 }
                             },
                             legend: {
-                                display: true,
                                 position: 'top',
-                                labels: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 10 : 12
-                                    }
-                                }
                             }
                         },
                         scales: {
                             y: {
                                 beginAtZero: true,
-                                max: 100,
-                                title: {
-                                    display: true,
-                                    text: 'Porcentaje (%)',
-                                    font: {
-                                        size: window.innerWidth < 768 ? 10 : 12
-                                    }
-                                },
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    }
-                                }
-                            },
-                            x: {
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    },
-                                    maxRotation: window.innerWidth < 768 ? 45 : 0,
-                                    minRotation: window.innerWidth < 768 ? 45 : 0
-                                }
+                                ticks: { stepSize: 1 }
                             }
                         }
                     }
@@ -1795,105 +1767,42 @@
                 new Chart(ctxJugadores, {
                     type: 'bar',
                     data: {
-                        labels: ['Omar Álvarez', 'Gustavo Barcos', 'Simón Cava', 'Daniel Figuera', 'Christian Frendín', 'Edgar Jaua', 'Ricardo Larrazábal', 'Geronimo Peña', 'Christian Riveros', 'Honorio Sigala', 'Alejandro Villoría'],
-                        datasets: [{
-                            label: 'Winners (W)',
-                            data: [],
-                            backgroundColor: 'rgba(45, 74, 62, 0.8)',
-                            borderColor: '#2d4a3e',
-                            borderWidth: 2
-                        }, {
-                            label: 'Errores No Forzados (UE)',
-                            data: [],
-                            backgroundColor: 'rgba(244, 67, 54, 0.8)',
-                            borderColor: '#f44336',
-                            borderWidth: 2
-                        }, {
-                            label: 'Eficiencia Ponderada (%)',
-                            data: [],
-                            type: 'line',
-                            backgroundColor: 'rgba(218, 165, 32, 0.2)',
-                            borderColor: '#daa520',
-                            borderWidth: 3,
-                            yAxisID: 'y1',
-                            tension: 0.4
-                        }]
+                        labels: ['Omar Álvarez', 'Ricardo Larrazábal', 'Christian Riveros', 'Christian Frendín', 'Simón Cava', 'Carlos Peña', 'Edgar Jaua', 'Daniel Figuera', 'Gustavo Barcos', 'Honorio Sigala'],
+                        datasets: [
+                            {
+                                label: 'Victorias',
+                                data: [1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+                                backgroundColor: 'rgba(76, 175, 80, 0.8)',
+                                borderColor: '#4CAF50',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Derrotas',
+                                data: [0, 0, 0, 0, 0, 0, 1, 1, 2, 2],
+                                backgroundColor: 'rgba(244, 67, 54, 0.8)',
+                                borderColor: '#f44336',
+                                borderWidth: 1
+                            }
+                        ]
                     },
                     options: {
+                        indexAxis: 'y',
                         responsive: true,
                         maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
-                                text: 'Rendimiento de Jugadores con 2+ Partidos',
-                                font: {
-                                    size: window.innerWidth < 768 ? 12 : 16
-                                }
+                                text: '👥 Récord de Victorias y Derrotas por Jugador',
+                                font: { size: window.innerWidth < 768 ? 12 : 16 }
                             },
                             legend: {
-                                display: true,
                                 position: 'top',
-                                labels: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 12
-                                    }
-                                }
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    afterBody: function (context) {
-                                        return '';
-                                    }
-                                }
                             }
                         },
                         scales: {
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Cantidad',
-                                    font: {
-                                        size: window.innerWidth < 768 ? 10 : 12
-                                    }
-                                },
-                                position: 'left',
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    }
-                                }
-                            },
-                            y1: {
-                                type: 'linear',
-                                display: true,
-                                position: 'right',
-                                beginAtZero: true,
-                                max: 100,
-                                title: {
-                                    display: true,
-                                    text: 'Eficiencia (%)',
-                                    font: {
-                                        size: window.innerWidth < 768 ? 10 : 12
-                                    }
-                                },
-                                grid: {
-                                    drawOnChartArea: false,
-                                },
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    }
-                                }
-                            },
                             x: {
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 8 : 11
-                                    },
-                                    maxRotation: 45,
-                                    minRotation: 45
-                                }
+                                beginAtZero: true,
+                                ticks: { stepSize: 1 }
                             }
                         }
                     }
@@ -1903,67 +1812,33 @@
             const ctxWinnersRanking = document.getElementById('winnersRankingChart');
             if (ctxWinnersRanking) {
                 new Chart(ctxWinnersRanking, {
-                    type: 'bar',
+                    type: 'doughnut',
                     data: {
-                        labels: ['Omar Álvarez', 'Gustavo Barcos', 'Simón Cava', 'Daniel Figuera', 'Christian Frendín', 'Edgar Jaua', 'Ricardo Larrazábal', 'Geronimo Peña', 'Christian Riveros', 'Honorio Sigala', 'Alejandro Villoría'],
+                        labels: ['Súper Tie-Breaks Ganados', 'Súper Tie-Breaks Perdidos'],
                         datasets: [{
-                            label: 'Total Winners (W)',
-                            data: [],
+                            data: [3, 1],
                             backgroundColor: [
-                                'rgba(218, 165, 32, 0.9)',
-                                'rgba(218, 165, 32, 0.85)',
-                                'rgba(218, 165, 32, 0.85)',
-                                'rgba(218, 165, 32, 0.8)',
-                                'rgba(45, 74, 62, 0.8)',
-                                'rgba(45, 74, 62, 0.8)',
-                                'rgba(45, 74, 62, 0.75)',
-                                'rgba(45, 74, 62, 0.7)',
-                                'rgba(45, 74, 62, 0.65)',
-                                'rgba(45, 74, 62, 0.6)',
-                                'rgba(45, 74, 62, 0.55)'
+                                'rgba(76, 175, 80, 0.8)',
+                                'rgba(244, 67, 54, 0.8)'
                             ],
-                            borderColor: '#2d4a3e',
-                            borderWidth: 2
+                            borderColor: [
+                                '#4CAF50',
+                                '#f44336'
+                            ],
+                            borderWidth: 1
                         }]
                     },
                     options: {
-                        indexAxis: 'y',
                         responsive: true,
                         maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
-                                text: '🏆 Ranking de Winners',
-                                font: {
-                                    size: window.innerWidth < 768 ? 12 : 16
-                                }
+                                text: '🎯 Efectividad en Súper Tie-Breaks',
+                                font: { size: window.innerWidth < 768 ? 12 : 16 }
                             },
                             legend: {
-                                display: false
-                            }
-                        },
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: '',
-                                    font: {
-                                        size: window.innerWidth < 768 ? 10 : 12
-                                    }
-                                },
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    }
-                                }
-                            },
-                            y: {
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    }
-                                }
+                                position: 'bottom',
                             }
                         }
                     }
@@ -1973,78 +1848,33 @@
             const ctxEfficiencyRanking = document.getElementById('efficiencyRankingChart');
             if (ctxEfficiencyRanking) {
                 new Chart(ctxEfficiencyRanking, {
-                    type: 'bar',
+                    type: 'pie',
                     data: {
-                        labels: ['Omar Álvarez', 'Gustavo Barcos', 'Simón Cava', 'Daniel Figuera', 'Christian Frendín', 'Edgar Jaua', 'Ricardo Larrazábal', 'Geronimo Peña', 'Christian Riveros', 'Honorio Sigala', 'Alejandro Villoría'],
+                        labels: ['Sets Ganados', 'Sets Perdidos'],
                         datasets: [{
-                            label: 'Eficiencia Ponderada (%)',
-                            data: [],
+                            data: [4, 8],
                             backgroundColor: [
-                                'rgba(76, 175, 80, 0.9)',
                                 'rgba(76, 175, 80, 0.8)',
-                                'rgba(76, 175, 80, 0.75)',
-                                'rgba(139, 195, 74, 0.8)',
-                                'rgba(139, 195, 74, 0.75)',
-                                'rgba(139, 195, 74, 0.7)',
-                                'rgba(255, 193, 7, 0.8)',
-                                'rgba(255, 193, 7, 0.75)',
-                                'rgba(255, 152, 0, 0.8)',
-                                'rgba(255, 152, 0, 0.75)',
-                                'rgba(244, 67, 54, 0.9)'
+                                'rgba(244, 67, 54, 0.8)'
                             ],
-                            borderColor: '#2d4a3e',
-                            borderWidth: 2
+                            borderColor: [
+                                '#4CAF50',
+                                '#f44336'
+                            ],
+                            borderWidth: 1
                         }]
                     },
                     options: {
-                        indexAxis: 'y',
                         responsive: true,
                         maintainAspectRatio: false,
                         plugins: {
                             title: {
                                 display: true,
-                                text: '📊 Ranking de Eficiencia Ponderada',
-                                font: {
-                                    size: window.innerWidth < 768 ? 12 : 16
-                                }
+                                text: '🎾 Balance Global de Sets',
+                                font: { size: window.innerWidth < 768 ? 12 : 16 }
                             },
                             legend: {
-                                display: false
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function (context) {
-                                        return context.parsed.x.toFixed(1) + '%';
-                                    }
-                                }
-                            }
-                        },
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                max: 100,
-                                title: {
-                                    display: true,
-                                    text: '',
-                                    font: {
-                                        size: window.innerWidth < 768 ? 10 : 12
-                                    }
-                                },
-                                ticks: {
-                                    callback: function (value) {
-                                        return value + '%';
-                                    },
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    }
-                                }
-                            },
-                            y: {
-                                ticks: {
-                                    font: {
-                                        size: window.innerWidth < 768 ? 9 : 11
-                                    }
-                                }
+                                position: 'bottom',
                             }
                         }
                     }
