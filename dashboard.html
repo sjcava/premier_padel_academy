@@ -891,6 +891,59 @@
         <section class="section" id="resultados">
             <h2>🏆 Últimos Resultados</h2>
             <div id="matchesContainer">
+                <!-- SEGUNDA JORNADA -->
+                <div class="match-card">
+                    <div class="match-header">
+                        <span class="competition-name">Segunda Jornada</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="match-date">20/04/2026</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Premier Padel Academy (PPCA)</div>
+                        </div>
+                        <div class="score">2-1</div>
+                        <div class="players">
+                            <div class="opponent-team">Lagunita Country Club (LPCA)</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>3 Partidos Jugados</span>
+                        <span></span>
+                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Detalles</button>
+                    </div>
+                    <div class="detailed-stats" id="details-0">
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Omar Álvarez / Ricardo Larrazábal</strong> vs Steven Jesus Abigail Pabon Gonzalez / Pascual Cozzolino Millan</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-7, 6-4, 10-5</p>
+                            <div style="text-align: center; font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9em;">(¡Remontada épica!)</div>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(244, 67, 54, 0.1); border-radius: 10px;">
+                            <h5 style="color: #d32f2f; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - DERROTA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Gustavo Barcos / Honorio Sigala</strong> vs Pablo Enrique Bonilla Prado / David Diaz</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 2-6, 2-6</p>
+                            <div style="text-align: center; font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9em;">(Estadísticas detalladas no disponibles para este partido)</div>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Riveros / Christian Frendín</strong> vs Gabriel Djukic / Santiago Peralto</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 2-6, 7-6, 10-7</p>
+                            <div style="text-align: center; font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9em;">(¡Remontada épica!)</div>
+                        </div>
+
+                        <div class="gemini-feature">
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- PRIMERA JORNADA -->
                 <div class="match-card">
                     <div class="match-header">
@@ -911,9 +964,9 @@
                     <div class="match-details">
                         <span>3 Partidos Jugados</span>
                         <span></span>
-                        <button class="show-details" onclick="toggleMatchDetails(0)">Ver Detalles</button>
+                        <button class="show-details" onclick="toggleMatchDetails(1)">Ver Detalles</button>
                     </div>
-                    <div class="detailed-stats" id="details-0">
+                    <div class="detailed-stats" id="details-1">
                         <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
 
                         <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(244, 67, 54, 0.1); border-radius: 10px;">
@@ -938,8 +991,8 @@
                         </div>
 
                         <div class="gemini-feature">
-                            <button class="gemini-button" onclick="generateMatchSummary(this, 0)">✨ Generar Resumen con IA</button>
-                            <div class="gemini-result" id="summary-result-0" style="display: none;"></div>
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 1)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-1" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -951,11 +1004,11 @@
             <div class="stats-grid">
                 <!-- Encuentros -->
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Encuentros Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">1</div>
                     <div class="stat-label">Encuentros Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -965,35 +1018,35 @@
 
                 <!-- Partidos -->
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">6</div>
                     <div class="stat-label">Partidos Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">3</div>
                     <div class="stat-label">Partidos Ganados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">3</div>
                     <div class="stat-label">Partidos Perdidos</div>
                 </div>
 
                 <!-- Sets & Super Ties -->
                 <div class="stat-card">
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">4</div>
                     <div class="stat-label">Sets Ganados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
+                    <div class="stat-value">8</div>
                     <div class="stat-label">Sets Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">4</div>
                     <div class="stat-label">Super Tie Jugados</div>
                 </div>
 
                 <!-- Super Ties & Special -->
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">3</div>
                     <div class="stat-label">Super Tie Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -1001,7 +1054,7 @@
                     <div class="stat-label">Super Tie Perdidos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Remontadas</div>
                     <p
                         style="font-size: 0.75rem; color: #666; font-style: italic; margin-top: 0.4rem; line-height: 1.2;">
@@ -1010,7 +1063,7 @@
 
                 <!-- Streaks & Fun -->
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">1</div>
                     <div class="stat-label">Encuentros Invictos Consecutivos</div>
                 </div>
                 <div class="stat-card">
@@ -1018,7 +1071,7 @@
                     <div class="stat-label">Sets Ganados 6-0</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">🍺 23</div>
+                    <div class="stat-value">🍺 45</div>
                     <div class="stat-label">Cantidad de Cervezas</div>
                 </div>
             </div>
