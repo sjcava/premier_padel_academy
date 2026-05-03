@@ -1712,8 +1712,8 @@
                         if (!radioScript) throw new Error("Falló la condensación del guion");
 
                         // Safety check length
-                        if (radioScript.length > 800) {
-                            radioScript = radioScript.substring(0, 797) + "...";
+                        if (radioScript.length > 4000) {
+                            radioScript = radioScript.substring(0, 3997) + "...";
                         }
 
                         console.log("Guion generado:", radioScript);
