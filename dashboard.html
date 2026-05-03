@@ -1522,7 +1522,7 @@
             resultDiv.style.display = 'block';
             resultDiv.innerHTML = 'Generando resumen... 🧠';
 
-            const matchCard = document.querySelectorAll('.match-card')[matchIndex];
+            const matchCard = button.closest('.match-card');
             const ourTeam = matchCard.querySelector('.our-team').innerText;
             const opponentTeam = matchCard.querySelector('.opponent-team').innerText;
             const score = matchCard.querySelector('.score').innerText;
