@@ -1734,16 +1734,17 @@
 
         function toggleMatchDetails(matchIndex) {
             const detailsDiv = document.getElementById(`details-${matchIndex}`);
-            const buttons = document.querySelectorAll('.show-details');
-            const button = buttons[matchIndex];
-
-            if (detailsDiv && button) {
+            
+            if (detailsDiv) {
+                const matchCard = detailsDiv.closest('.match-card');
+                const button = matchCard.querySelector('.show-details');
+                
                 if (detailsDiv.classList.contains('show')) {
                     detailsDiv.classList.remove('show');
-                    button.textContent = 'Ver Estadísticas';
+                    button.textContent = 'Ver Detalles';
                 } else {
                     detailsDiv.classList.add('show');
-                    button.textContent = 'Ocultar Estadísticas';
+                    button.textContent = 'Ocultar Detalles';
                 }
             }
         }
