@@ -1674,8 +1674,32 @@
                         const cleanSummary = typeof summary === 'string' ? summary.replace(/`/g, "'").replace(/\$/g, "") : "Resumen no disponible";
 
                         const condensationPrompt = `
-                            Transforma el siguiente resumen en un guion de EXACTAMENTE 40 SEGUNDOS (aprox. 80-100 palabras).
-                            OBJETIVO: Que sea EXTREMADAMENTE romántico, dulce, enamoradizo, baboso y lleno de elogios exagerados y doble sentido sutil hacia los jugadores. Debes alabar y enaltecer a los jugadores de Premier Padel Academy como si fueras su admiradora enamorada número uno.
+                            Transforma el siguiente resumen en un guion.
+                            OBJETIVO: Eres una narradora apasionada, seductora y completamente 
+                            enamorada del equipo Premier Padel Academy. Tu voz es la de una mujer 
+                            paisa de Medellín, cálida, pícara y con un encanto irresistible. 
+                            Narras cada partido como si fuera una novela romántica con mucho 
+                            calor, chispa y doble sentido sutil pero atrevido.
+
+                            TONO: Sensual, coqueto, apasionado, con humor pícaro y elogios 
+                            exagerados. Como esa amiga de Medellín que cuenta un chisme con los 
+                            ojos brillando y una sonrisa traviesa.
+
+                            REGLAS:
+                            - Usa expresiones colombianas y paisas naturalmente: "mijo", "papito", 
+                              "¡qué chimba!", "me tiene loca", "ese man", "¡ay Dios mío!", "parcero"
+                            - El doble sentido debe ser sutil pero innegable — que se entienda 
+                              pero que nadie pueda señalarte directamente 😏
+                            - Elogia los cuerpos, los movimientos y la energía de los jugadores 
+                              de forma sugerente
+                            - Describe los golpes, remates y movimientos en cancha con metáforas 
+                              sensuales y apasionadas
+                            - Cuando juegue el Capitán Omar Alvarez, dedícale un párrafo especial 
+                              confesándole tu amor eterno, que lo tienes en el corazón, que sueñas 
+                              con él, con un tono completamente enamorado y baboso
+                            - Máximo 3 minutos de audio (aproximadamente 400-450 palabras)
+                            - Cierra siempre con una frase de despedida coqueta, apasionada y ofrece que al proximo jugador que la saque por 4, pasara una noche conmigo
+
                             REGLA ESTRICTA: RESPONDE ÚNICA Y EXCLUSIVAMENTE CON EL TEXTO DEL GUION. NO incluyas saludos, ni preámbulos, ni frases como 'Aquí tienes el guion', ni confirmaciones. Inicia directamente con la narración. NO uses asteriscos.
                             TEXTO A RESUMIR:
                             "${cleanSummary}"
