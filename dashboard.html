@@ -891,6 +891,56 @@
         <section class="section" id="resultados">
             <h2>🏆 Últimos Resultados</h2>
             <div id="matchesContainer">
+                <!-- CUARTA JORNADA -->
+                <div class="match-card">
+                    <div class="match-header">
+                        <span class="competition-name">Cuarta Jornada</span>
+                        <span class="result-indicator victory"
+                            style="padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; background: #4CAF50; color: white;">VICTORIA</span>
+                        <span class="match-date">30/04/2026</span>
+                    </div>
+                    <div class="match-players">
+                        <div class="players">
+                            <div class="our-team">Premier Padel Academy (PPCA)</div>
+                        </div>
+                        <div class="score">3-0</div>
+                        <div class="players">
+                            <div class="opponent-team">Vívora Haus (VHPC)</div>
+                        </div>
+                    </div>
+                    <div class="match-details">
+                        <span>3 Partidos Jugados</span>
+                        <span></span>
+                        <button class="show-details" onclick="toggleMatchDetails(4)">Ver Detalles</button>
+                    </div>
+                    <div class="detailed-stats" id="details-4">
+                        <h4 style="margin: 1rem 0; color: #2d4a3e;">RESULTADOS POR PAREJA</h4>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 1 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Ricardo Larrazábal / Daniel Figuera</strong> vs Douglas Betancourt / Franklin Antonio Cegarra Madrid</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-0, 6-1</p>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 2 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Christian Frendín / Simón Cava</strong> vs Pablo Gerardo Alvarez Covarrubias / Pedro José Betancourt Oliveros</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-0, 6-2</p>
+                        </div>
+
+                        <div class="pair-result" style="margin: 1rem 0; padding: 1rem; background: rgba(76, 175, 80, 0.1); border-radius: 10px;">
+                            <h5 style="color: #2d4a3e; margin-bottom: 0.5rem; text-align: center;">Pareja 3 - VICTORIA</h5>
+                            <p style="text-align: center; margin-bottom: 1rem;"><strong>Honorio Sigala / Gustavo Barcos</strong> vs Luis Daniel Llambi Cartaya / Miguel Valle Planas</p>
+                            <p style="text-align: center;"><strong>Resultado:</strong> 6-2, 6-2</p>
+                        </div>
+
+                        <div class="gemini-feature">
+                            <button class="gemini-button" onclick="generateMatchSummary(this, 4)">✨ Generar Resumen con IA</button>
+                            <div class="gemini-result" id="summary-result-4" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- SEGUNDA JORNADA -->
                 <div class="match-card">
                     <div class="match-header">
@@ -1000,11 +1050,11 @@
             <div class="stats-grid">
                 <!-- Encuentros -->
                 <div class="stat-card">
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">3</div>
                     <div class="stat-label">Encuentros Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Encuentros Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -1014,11 +1064,11 @@
 
                 <!-- Partidos -->
                 <div class="stat-card">
-                    <div class="stat-value">6</div>
+                    <div class="stat-value">9</div>
                     <div class="stat-label">Partidos Jugados</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">3</div>
+                    <div class="stat-value">6</div>
                     <div class="stat-label">Partidos Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -1028,7 +1078,7 @@
 
                 <!-- Sets & Super Ties -->
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
+                    <div class="stat-value">10</div>
                     <div class="stat-label">Sets Ganados</div>
                 </div>
                 <div class="stat-card">
@@ -1059,11 +1109,11 @@
 
                 <!-- Streaks & Fun -->
                 <div class="stat-card">
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Encuentros Invictos Consecutivos</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">2</div>
                     <div class="stat-label">Sets Ganados 6-0</div>
                 </div>
                 <div class="stat-card">
@@ -1321,12 +1371,15 @@
                         <span style="font-size: 0.9em; color: #666;">📍 LIDER</span>
                     </div>
                 </div>
-                <div class="calendar-item">
-                    <div>
+                <div class="calendar-item" style="border-left-color: #4CAF50; background: rgba(76, 175, 80, 0.05);">
+                    <div style="flex: 1;">
                         <h4 style="color: #2d4a3e;">🏆 vs VIVORA HAUS</h4>
                         <p style="color: #daa520; font-weight: bold;">VHPC</p>
                     </div>
-                    <div style="text-align: right;">
+                    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+                        <span style="background: #4CAF50; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.5px;">VICTORIA</span>
+                    </div>
+                    <div style="flex: 1; text-align: right;">
                         <strong>30 de abril • 7:00 PM</strong><br>
                         <span style="font-size: 0.9em; color: #666;">📍 LIDER</span>
                     </div>
@@ -1723,18 +1776,18 @@
                 new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Jornada 1 (vs ATCA)', 'Jornada 2 (vs LPCA)'],
+                        labels: ['Jornada 1 (vs ATCA)', 'Jornada 2 (vs LPCA)', 'Jornada 4 (vs VHPC)'],
                         datasets: [
                             {
                                 label: 'Partidos Ganados',
-                                data: [1, 2],
+                                data: [1, 2, 3],
                                 backgroundColor: 'rgba(76, 175, 80, 0.8)',
                                 borderColor: '#4CAF50',
                                 borderWidth: 1
                             },
                             {
                                 label: 'Partidos Perdidos',
-                                data: [2, 1],
+                                data: [2, 1, 0],
                                 backgroundColor: 'rgba(244, 67, 54, 0.8)',
                                 borderColor: '#f44336',
                                 borderWidth: 1
@@ -1773,7 +1826,7 @@
                         datasets: [
                             {
                                 label: 'Victorias',
-                                data: [1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+                                data: [1, 2, 1, 2, 2, 1, 0, 1, 1, 1],
                                 backgroundColor: 'rgba(76, 175, 80, 0.8)',
                                 borderColor: '#4CAF50',
                                 borderWidth: 1
@@ -1854,7 +1907,7 @@
                     data: {
                         labels: ['Sets Ganados', 'Sets Perdidos'],
                         datasets: [{
-                            data: [4, 8],
+                            data: [10, 8],
                             backgroundColor: [
                                 'rgba(76, 175, 80, 0.8)',
                                 'rgba(244, 67, 54, 0.8)'
