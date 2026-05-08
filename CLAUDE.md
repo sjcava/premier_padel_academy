@@ -2,11 +2,15 @@
 
 ## Proyecto: Dashboard Temporada 2026
 
-### Últimas Actualizaciones (3 de Mayo de 2026)
+### Últimas Actualizaciones (8 de Mayo de 2026)
 
 - **Resultados de Jornadas:**
   - Se añadieron los resultados completos de la **Jornada 3 vs GALI PADEL (GLIA)** (Victoria global 2-1).
   - Se añadieron los resultados completos de la **Jornada 4 vs Vívora Haus (VHPC)** (Victoria global 3-0).
+  - Se añadieron los resultados completos de la **Jornada 5 vs Centro Ítalo Venezolano (CIVC)** (Victoria global 3-0).
+    - Doble 1: Ricardo Larrazábal / Juan Riveros → 6-1, 6-1
+    - Doble 2: Simón Cava / Carlos Peña → 6-2, 6-1
+    - Doble 3: Daniel Figuera / Edgar Jaua → 6-2, 6-2
 
 - **Correcciones de Errores (Bugs):**
   - Se corrigió la lógica del botón **"Ver Detalles"** de los partidos para que funcione dinámicamente y no dependa del orden de las jornadas en la página, evitando cruces de información al añadir nuevas fechas.
