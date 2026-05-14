@@ -2,7 +2,17 @@
 
 ## Proyecto: Dashboard Temporada 2026
 
-### Últimas Actualizaciones (8 de Mayo de 2026)
+### Últimas Actualizaciones (14 de Mayo de 2026)
+
+- **Mejoras Visuales y de Interfaz (UI/UX):**
+  - Implementación de un nuevo diseño visual generalizado en `index.html` estilo "Broadcast", adoptando variables CSS para la paleta de colores corporativa y aplicando efectos de "glassmorphism".
+  - Inyección dinámica de un panel interactivo (a través de `tweaks-panel.jsx` con React/Babel) para poder alternar en tiempo real entre distintos temas visuales, niveles de densidad y módulos.
+  - Limpieza en la página de inicio (`index.html`) con la remoción del menú de navegación estático superior (manteniéndolo en los dashboards respectivos de cada temporada).
+  - Solución al problema de solapamiento de capas (z-index) del cintillo de movimiento (Ticker) de resultados, para que pase correctamente por detrás del recuadro principal.
+  - Alineación al centro del botón **"🔊 Escuchar Resumen"** dentro de los recuadros en `dashboard.html` y `temporada-2025.html`.
+  - Resolución de advertencia de compatibilidad de estándares en CSS al declarar correctamente la regla `background-clip` adicional a su equivalente `-webkit-background-clip`.
+
+### Actualizaciones Anteriores (8 de Mayo de 2026)
 
 - **Resultados de Jornadas:**
   - Se añadieron los resultados completos de la **Jornada 3 vs GALI PADEL (GLIA)** (Victoria global 2-1).
