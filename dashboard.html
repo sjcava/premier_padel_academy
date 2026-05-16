@@ -869,6 +869,140 @@ body::before {
 }
 .rank-points.top-3 { color: var(--gold) !important; font-weight: 700 !important; font-size: 19px !important; }
 
+/* ============ GRUPO / BRACKET ============ */
+.grupo-wrapper { display: flex; flex-direction: column; gap: 56px; }
+.grupo-section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.grupo-section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+.standings-wrap { overflow-x: auto; }
+.standings-table { width: 100%; border-collapse: collapse; }
+.standings-table thead th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding: 8px 14px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.standings-table thead th.col-team { text-align: left; }
+.standings-table tbody td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(218,165,32,0.07);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--mute);
+  vertical-align: middle;
+}
+.standings-table tbody td.col-team { text-align: left; }
+.standings-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+.st-pos { font-weight: 700; font-size: 18px; color: var(--white); }
+.st-leader { color: var(--gold) !important; }
+.st-team-name { font-family: 'Big Shoulders Display', sans-serif; font-weight: 700; font-size: 17px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); display: block; }
+.st-team-code { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: var(--mute); }
+.st-w { color: var(--victory) !important; font-weight: 700; font-size: 16px; }
+.st-l { color: var(--defeat) !important; font-size: 15px; }
+.st-pending-txt { font-size: 10px; color: var(--mute); letter-spacing: 0.08em; white-space: nowrap; }
+.standings-table tr.row-ppca { background: rgba(45,74,62,0.28) !important; border-left: 3px solid var(--gold); }
+.standings-table tr.row-qualify { border-left: 3px solid rgba(110,196,111,0.35); }
+.standings-table tr.row-danger { border-left: 3px solid rgba(232,89,89,0.18); }
+
+.bracket-outer {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+}
+.bracket-round { flex: 1; max-width: 280px; display: flex; flex-direction: column; }
+.bracket-round-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mute);
+  text-align: center;
+  margin-bottom: 14px;
+}
+.bracket-match {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bracket-match.final-match { border-color: var(--gold-dim); background: var(--surface-2); }
+.bracket-slot {
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(218,165,32,0.08);
+}
+.bracket-slot:last-child { border-bottom: none; }
+.bracket-slot.tbd { opacity: 0.4; }
+.bracket-slot-name { font-family: 'Big Shoulders Display', sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); }
+.bracket-slot-score { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mute); }
+.bracket-conn {
+  width: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 28px;
+  position: relative;
+}
+.bracket-conn::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--line-strong);
+  top: 50%;
+  transform: translateY(calc(-50% + 14px));
+}
+.bracket-arrow {
+  font-size: 12px;
+  color: var(--gold-dim);
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  padding: 0 3px;
+}
+.bracket-pending-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0.65;
+}
+@media (max-width: 680px) {
+  .bracket-outer { flex-direction: column; align-items: center; }
+  .bracket-round { max-width: 100%; width: 100%; }
+  .bracket-conn { width: 100%; height: 32px; padding-bottom: 0; padding-right: 28px; }
+  .bracket-conn::before { width: 1px; height: 100%; top: 0; left: 50%; transform: translateX(calc(-50% + 14px)); }
+  .bracket-arrow { background: var(--bg); }
+}
+
 /* ============ GEMINI / AI ============ */
 .gemini-feature { margin-top: 24px !important; text-align: center !important; }
 .gemini-button, .gemini-button-small {
@@ -1362,6 +1496,7 @@ body::before {
                 <a href="#resultados">Resultados</a>
                 <a href="#estadisticas">Estadísticas</a>
                 <a href="#equipo">Nuestro Equipo</a>
+                <a href="#grupo">Fase de Grupos</a>
                 <a href="#calendario">Calendario</a>
                 <a href="#contacto">Contacto</a>
                 <a href="temporada-2025.html" class="temporada-anterior">TEMPORADA
@@ -1962,6 +2097,164 @@ body::before {
                 </div>
             </div>
         </section>
+
+        <!-- ===== FASE DE GRUPOS ===== -->
+        <section class="section" id="grupo">
+            <h2>🎾 Fase de Grupos — Temporada 2026</h2>
+            <div class="grupo-wrapper">
+
+                <!-- TABLA DE POSICIONES -->
+                <div>
+                    <div class="grupo-section-label">Tabla de Posiciones · Grupo Único</div>
+                    <div class="standings-wrap">
+                        <table class="standings-table">
+                            <thead>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th class="col-team">Equipo</th>
+                                    <th>PJ</th>
+                                    <th>PG</th>
+                                    <th>PP</th>
+                                    <th>Próximo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-qualify">
+                                    <td class="st-pos"><span class="st-leader">1</span></td>
+                                    <td class="col-team"><span class="st-team-name">La Rosca Padel</span><span class="st-team-code">RPCA</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">5</td>
+                                    <td class="st-l">1</td>
+                                    <td class="st-pending-txt">vs ATCA</td>
+                                </tr>
+                                <tr class="row-ppca">
+                                    <td class="st-pos">2</td>
+                                    <td class="col-team"><span class="st-team-name">Premier Padel Acad.</span><span class="st-team-code">PPCA ★</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">4</td>
+                                    <td class="st-l">2</td>
+                                    <td class="st-pending-txt">vs CPAB</td>
+                                </tr>
+                                <tr class="row-qualify">
+                                    <td class="st-pos">2</td>
+                                    <td class="col-team"><span class="st-team-name">Gali Padel</span><span class="st-team-code">GLIA</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">4</td>
+                                    <td class="st-l">2</td>
+                                    <td class="st-pending-txt">vs VHPC</td>
+                                </tr>
+                                <tr class="row-qualify">
+                                    <td class="st-pos">2</td>
+                                    <td class="col-team"><span class="st-team-name">Lagunita C.C.</span><span class="st-team-code">LPCA</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">4</td>
+                                    <td class="st-l">2</td>
+                                    <td class="st-pending-txt">vs CIVC</td>
+                                </tr>
+                                <tr class="row-qualify">
+                                    <td class="st-pos">2</td>
+                                    <td class="col-team"><span class="st-team-name">Altamira Tenis C.</span><span class="st-team-code">ATCA</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">4</td>
+                                    <td class="st-l">2</td>
+                                    <td class="st-pending-txt">vs RPCA</td>
+                                </tr>
+                                <tr class="row-danger">
+                                    <td class="st-pos">6</td>
+                                    <td class="col-team"><span class="st-team-name">Club Puerto Azul</span><span class="st-team-code">CPAB</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">2</td>
+                                    <td class="st-l">4</td>
+                                    <td class="st-pending-txt">vs PPCA</td>
+                                </tr>
+                                <tr class="row-danger">
+                                    <td class="st-pos">7</td>
+                                    <td class="col-team"><span class="st-team-name">Vívora Haus</span><span class="st-team-code">VHPC</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">1</td>
+                                    <td class="st-l">5</td>
+                                    <td class="st-pending-txt">vs GLIA</td>
+                                </tr>
+                                <tr class="row-danger">
+                                    <td class="st-pos">8</td>
+                                    <td class="col-team"><span class="st-team-name">Centro Ítalo Ven.</span><span class="st-team-code">CIVC</span></td>
+                                    <td>6</td>
+                                    <td class="st-w">0</td>
+                                    <td class="st-l">6</td>
+                                    <td class="st-pending-txt">vs LPCA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="bracket-pending-note" style="margin-top: 14px;">
+                        <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--victory); margin-right:6px; vertical-align:middle; box-shadow:0 0 6px var(--victory);"></span>
+                        Zona clasificatoria Top 4 · 4 encuentros pendientes · Posiciones 2–5 empatadas
+                    </p>
+                </div>
+
+                <!-- CUADRO ELIMINATORIO -->
+                <div>
+                    <div class="grupo-section-label">Cuadro Eliminatorio</div>
+                    <div class="bracket-outer">
+
+                        <!-- SEMIFINAL 1 -->
+                        <div class="bracket-round">
+                            <div class="bracket-round-title">Semifinal 1</div>
+                            <div class="bracket-match">
+                                <div class="bracket-slot tbd">
+                                    <span class="bracket-slot-name">Por Definir</span>
+                                    <span class="bracket-slot-score">—</span>
+                                </div>
+                                <div class="bracket-slot tbd">
+                                    <span class="bracket-slot-name">Por Definir</span>
+                                    <span class="bracket-slot-score">—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conector → -->
+                        <div class="bracket-conn"><span class="bracket-arrow">▶</span></div>
+
+                        <!-- FINAL -->
+                        <div class="bracket-round">
+                            <div class="bracket-round-title">Final</div>
+                            <div class="bracket-match final-match">
+                                <div class="bracket-slot tbd">
+                                    <span class="bracket-slot-name">Ganador SF1</span>
+                                    <span class="bracket-slot-score">—</span>
+                                </div>
+                                <div class="bracket-slot tbd">
+                                    <span class="bracket-slot-name">Ganador SF2</span>
+                                    <span class="bracket-slot-score">—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conector ← -->
+                        <div class="bracket-conn"><span class="bracket-arrow">◀</span></div>
+
+                        <!-- SEMIFINAL 2 -->
+                        <div class="bracket-round">
+                            <div class="bracket-round-title">Semifinal 2</div>
+                            <div class="bracket-match">
+                                <div class="bracket-slot tbd">
+                                    <span class="bracket-slot-name">Por Definir</span>
+                                    <span class="bracket-slot-score">—</span>
+                                </div>
+                                <div class="bracket-slot tbd">
+                                    <span class="bracket-slot-name">Por Definir</span>
+                                    <span class="bracket-slot-score">—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="bracket-pending-note">Se define al cierre de la fase de grupos</p>
+                </div>
+
+            </div>
+        </section>
+        <!-- ===== FIN FASE DE GRUPOS ===== -->
 
         <section class="section" id="calendario">
             <h2>📅 Calendario de Competiciones</h2>
