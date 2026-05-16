@@ -1003,6 +1003,62 @@ body::before {
   .bracket-arrow { background: var(--bg); }
 }
 
+/* ============ CUSTOM CHARTS ============ */
+.custom-chart-card {
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px !important;
+  gap: 22px;
+}
+.custom-chart-heading {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mute);
+  text-align: center;
+  width: 100%;
+}
+/* Padel Ball */
+.padel-ball-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+}
+.padel-ring-svg { width: 100%; height: 100%; overflow: visible; }
+.win-arc { stroke-dashoffset: 259.7; }
+.win-arc.active { animation: arcFillIn 1.5s cubic-bezier(.4,0,.2,1) forwards; }
+@keyframes arcFillIn { from { stroke-dashoffset: 259.7; } to { stroke-dashoffset: 0; } }
+.padel-center-score {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; pointer-events: none; line-height: 1;
+}
+.padel-score-row { display: flex; align-items: baseline; gap: 6px; justify-content: center; }
+.padel-score-win  { font-family: 'Big Shoulders Display', sans-serif; font-size: 40px; color: #4ccc70; font-weight: 700; }
+.padel-score-sep  { font-family: 'Big Shoulders Display', sans-serif; font-size: 28px; color: var(--mute); }
+.padel-score-loss { font-family: 'Big Shoulders Display', sans-serif; font-size: 40px; color: rgba(220,70,70,0.9); font-weight: 700; }
+.padel-score-pct  { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 0.14em; margin-top: 6px; }
+.padel-legend { display: flex; gap: 20px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; }
+.padel-legend .lw { color: #4ccc70; } .padel-legend .ll { color: rgba(220,70,70,0.85); }
+/* Sets Balance */
+.sets-numbers { display: flex; align-items: flex-end; justify-content: center; gap: 0; width: 100%; }
+.sets-num-block { text-align: center; flex: 1; }
+.sets-big { font-family: 'Big Shoulders Display', sans-serif; font-weight: 700; line-height: 1; }
+.sets-big.w  { font-size: 72px; color: #4ccc70; }
+.sets-big.t  { font-size: 40px; color: var(--gold); padding: 0 12px; }
+.sets-big.l  { font-size: 72px; color: rgba(220,70,70,0.85); }
+.sets-lbl { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.15em; color: var(--mute); text-transform: uppercase; margin-top: 4px; }
+.sets-track { width: 100%; height: 10px; background: rgba(220,70,70,0.25); border-radius: 2px; overflow: hidden; }
+.sets-fill { height: 100%; width: 0; background: linear-gradient(90deg, #2a7a4a, #4ccc70); border-radius: 2px; transition: width 1.3s cubic-bezier(.4,0,.2,1) .3s; }
+.sets-fill.go { width: 60.5%; }
+.sets-pct-row { display: flex; justify-content: space-between; width: 100%; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; }
+.sets-pct-row .sw { color: #4ccc70; } .sets-pct-row .sl { color: rgba(220,70,70,0.8); }
+
 /* ============ GEMINI / AI ============ */
 .gemini-feature { margin-top: 24px !important; text-align: center !important; }
 .gemini-button, .gemini-button-small {
@@ -1904,12 +1960,82 @@ body::before {
                 <div class="flourish-embed flourish-pictogram" data-src="visualisation/29001404"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/29001404/thumbnail" width="100%" alt="pictogram visualization" /></noscript></div>
             </div>
 
-            <div class="chart-container">
-                <canvas id="winnersRankingChart"></canvas>
+            <!-- Padel Ball: Efectividad Súper Ties -->
+            <div class="chart-container custom-chart-card">
+              <div class="custom-chart-heading">🎯 Efectividad en Súper Tie-Breaks</div>
+              <div class="padel-ball-wrapper">
+                <svg class="padel-ring-svg" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="ballGrad" cx="38%" cy="32%" r="65%">
+                      <stop offset="0%" stop-color="#f2ff55"/>
+                      <stop offset="55%" stop-color="#c8e000"/>
+                      <stop offset="100%" stop-color="#8aaa00"/>
+                    </radialGradient>
+                    <filter id="ballShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.45"/>
+                    </filter>
+                    <linearGradient id="winGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#2d9e4e"/>
+                      <stop offset="100%" stop-color="#4ccc70"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- track ring (losses) -->
+                  <circle cx="70" cy="70" r="62" fill="none" stroke="rgba(220,60,60,0.35)" stroke-width="9"/>
+                  <!-- win arc: 4/6 = 259.7 of 389.56 circumference, starts at top -->
+                  <circle class="win-arc" cx="70" cy="70" r="62" fill="none"
+                          stroke="url(#winGrad)" stroke-width="9"
+                          stroke-dasharray="259.7 389.56" stroke-linecap="round"
+                          transform="rotate(-90 70 70)"/>
+                  <!-- padel ball body -->
+                  <circle cx="70" cy="70" r="50" fill="url(#ballGrad)" filter="url(#ballShadow)"/>
+                  <!-- seam 1: vertical S-curve -->
+                  <path d="M 70,20 C 44,36 96,54 70,70 C 44,86 96,104 70,120"
+                        fill="none" stroke="rgba(255,255,255,0.52)" stroke-width="2.4" stroke-linecap="round"/>
+                  <!-- seam 2: horizontal S-curve -->
+                  <path d="M 20,70 C 36,44 54,96 70,70 C 86,44 104,96 120,70"
+                        fill="none" stroke="rgba(255,255,255,0.52)" stroke-width="2.4" stroke-linecap="round"/>
+                  <!-- specular highlight -->
+                  <ellipse cx="57" cy="50" rx="13" ry="8" fill="rgba(255,255,255,0.17)" transform="rotate(-28 57 50)"/>
+                </svg>
+                <div class="padel-center-score">
+                  <div class="padel-score-row">
+                    <span class="padel-score-win">4</span>
+                    <span class="padel-score-sep">·</span>
+                    <span class="padel-score-loss">2</span>
+                  </div>
+                  <div class="padel-score-pct">66.7%</div>
+                </div>
+              </div>
+              <div class="padel-legend">
+                <span class="lw">▮ 4 Ganados</span>
+                <span class="ll">▮ 2 Perdidos</span>
+              </div>
             </div>
 
-            <div class="chart-container">
-                <canvas id="efficiencyRankingChart"></canvas>
+            <!-- Sets Balance: animated horizontal gauge -->
+            <div class="chart-container custom-chart-card">
+              <div class="custom-chart-heading">🎾 Balance Global de Sets</div>
+              <div class="sets-numbers">
+                <div class="sets-num-block">
+                  <div class="sets-big w">23</div>
+                  <div class="sets-lbl">Ganados</div>
+                </div>
+                <div class="sets-num-block" style="flex:0">
+                  <div class="sets-big t">38</div>
+                  <div class="sets-lbl">Total</div>
+                </div>
+                <div class="sets-num-block">
+                  <div class="sets-big l">15</div>
+                  <div class="sets-lbl">Perdidos</div>
+                </div>
+              </div>
+              <div class="sets-track" style="width:100%">
+                <div class="sets-fill" id="setsBarFill"></div>
+              </div>
+              <div class="sets-pct-row">
+                <span class="sw">▲ 60.5% victorias</span>
+                <span class="sl">39.5% derrotas ▼</span>
+              </div>
             </div>
 
         </section>
@@ -2776,76 +2902,22 @@ body::before {
                 });
             }
 
-            const ctxWinnersRanking = document.getElementById('winnersRankingChart');
-            if (ctxWinnersRanking) {
-                new Chart(ctxWinnersRanking, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Súper Tie-Breaks Ganados', 'Súper Tie-Breaks Perdidos'],
-                        datasets: [{
-                            data: [4, 2],
-                            backgroundColor: [
-                                'rgba(76, 175, 80, 0.8)',
-                                'rgba(244, 67, 54, 0.8)'
-                            ],
-                            borderColor: [
-                                '#4CAF50',
-                                '#f44336'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: '🎯 Efectividad en Súper Tie-Breaks',
-                                font: { size: window.innerWidth < 768 ? 12 : 16 }
-                            },
-                            legend: {
-                                position: 'bottom',
-                            }
-                        }
-                    }
-                });
+            // Padel ball arc: animate on scroll into view
+            const winArc = document.querySelector('.win-arc');
+            if (winArc) {
+                const arcObs = new IntersectionObserver(entries => {
+                    entries.forEach(e => { if (e.isIntersecting) { winArc.classList.add('active'); arcObs.disconnect(); } });
+                }, { threshold: 0.4 });
+                arcObs.observe(winArc);
             }
 
-            const ctxEfficiencyRanking = document.getElementById('efficiencyRankingChart');
-            if (ctxEfficiencyRanking) {
-                new Chart(ctxEfficiencyRanking, {
-                    type: 'pie',
-                    data: {
-                        labels: ['Sets Ganados', 'Sets Perdidos'],
-                        datasets: [{
-                            data: [23, 15],
-                            backgroundColor: [
-                                'rgba(76, 175, 80, 0.8)',
-                                'rgba(244, 67, 54, 0.8)'
-                            ],
-                            borderColor: [
-                                '#4CAF50',
-                                '#f44336'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: '🎾 Balance Global de Sets',
-                                font: { size: window.innerWidth < 768 ? 12 : 16 }
-                            },
-                            legend: {
-                                position: 'bottom',
-                            }
-                        }
-                    }
-                });
+            // Sets bar: animate on scroll into view
+            const setsBar = document.getElementById('setsBarFill');
+            if (setsBar) {
+                const barObs = new IntersectionObserver(entries => {
+                    entries.forEach(e => { if (e.isIntersecting) { setsBar.classList.add('go'); barObs.disconnect(); } });
+                }, { threshold: 0.4 });
+                barObs.observe(setsBar);
             }
         });
 
