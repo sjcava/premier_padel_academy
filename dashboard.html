@@ -1059,6 +1059,66 @@ body::before {
 .sets-pct-row { display: flex; justify-content: space-between; width: 100%; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; }
 .sets-pct-row .sw { color: #4ccc70; } .sets-pct-row .sl { color: rgba(220,70,70,0.8); }
 
+/* ============ GRUPO MODAL ============ */
+#grupoModal {
+  display: none; position: fixed; inset: 0; z-index: 9000;
+  background: rgba(10,20,16,0.88); backdrop-filter: blur(8px);
+}
+.gm-content {
+  background: var(--surface); border: 1px solid var(--line-strong);
+  border-radius: 2px; max-width: 480px; width: 90%; margin: 6vh auto;
+  padding: 28px 28px 24px; box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+  position: relative; max-height: 86vh; overflow-y: auto;
+}
+.gm-close {
+  position: absolute; top: 14px; right: 18px; cursor: pointer;
+  font-family: 'JetBrains Mono', monospace; font-size: 18px;
+  color: var(--mute); line-height: 1;
+}
+.gm-close:hover { color: var(--gold); }
+.gm-header { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.gm-code {
+  font-family: 'Big Shoulders Display', sans-serif; font-size: 28px;
+  font-weight: 700; letter-spacing: 0.06em; color: var(--gold);
+}
+.gm-name {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.14em; color: var(--mute); margin-top: 2px; text-transform: uppercase;
+}
+.gm-record {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.12em; margin-top: 8px; color: var(--mute);
+}
+.gm-record .rw { color: var(--victory); }
+.gm-record .rl { color: var(--defeat); }
+.gm-matches { display: flex; flex-direction: column; gap: 6px; }
+.gm-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 12px; background: var(--surface-2); border-radius: 2px;
+  border-left: 3px solid transparent;
+}
+.gm-row.gm-w { border-left-color: var(--victory); }
+.gm-row.gm-l { border-left-color: var(--defeat); }
+.gm-row.gm-p { border-left-color: rgba(218,165,32,0.3); }
+.gm-opp {
+  font-family: 'Big Shoulders Display', sans-serif; font-size: 15px;
+  font-weight: 700; letter-spacing: 0.04em; color: var(--white);
+}
+.gm-opp-code {
+  font-family: 'JetBrains Mono', monospace; font-size: 9px;
+  color: var(--mute); letter-spacing: 0.12em; display: block; margin-top: 1px;
+}
+.gm-badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.1em; padding: 3px 8px; border-radius: 2px;
+  text-transform: uppercase; font-weight: 600; white-space: nowrap;
+}
+.gm-badge.bw { background: rgba(110,196,111,0.15); color: var(--victory); }
+.gm-badge.bl { background: rgba(232,89,89,0.12); color: var(--defeat); }
+.gm-badge.bp { background: rgba(218,165,32,0.1); color: var(--gold-dim); }
+.standings-table tbody tr[data-team] { cursor: pointer; }
+.standings-table tbody tr[data-team]:hover { background: rgba(255,255,255,0.04) !important; }
+
 /* ============ GEMINI / AI ============ */
 .gemini-feature { margin-top: 24px !important; text-align: center !important; }
 .gemini-button, .gemini-button-small {
@@ -2245,7 +2305,7 @@ body::before {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="row-qualify">
+                                <tr class="row-qualify" data-team="RPCA">
                                     <td class="st-pos"><span class="st-leader">1</span></td>
                                     <td class="col-team"><span class="st-team-name">La Rosca Padel</span><span class="st-team-code">RPCA</span></td>
                                     <td>6</td>
@@ -2253,7 +2313,7 @@ body::before {
                                     <td class="st-l">1</td>
                                     <td class="st-pending-txt">vs ATCA</td>
                                 </tr>
-                                <tr class="row-ppca">
+                                <tr class="row-ppca" data-team="PPCA">
                                     <td class="st-pos">2</td>
                                     <td class="col-team"><span class="st-team-name">Premier Padel Acad.</span><span class="st-team-code">PPCA ★</span></td>
                                     <td>6</td>
@@ -2261,7 +2321,7 @@ body::before {
                                     <td class="st-l">2</td>
                                     <td class="st-pending-txt">vs CPAB</td>
                                 </tr>
-                                <tr class="row-qualify">
+                                <tr class="row-qualify" data-team="GLIA">
                                     <td class="st-pos">2</td>
                                     <td class="col-team"><span class="st-team-name">Gali Padel</span><span class="st-team-code">GLIA</span></td>
                                     <td>6</td>
@@ -2269,7 +2329,7 @@ body::before {
                                     <td class="st-l">2</td>
                                     <td class="st-pending-txt">vs VHPC</td>
                                 </tr>
-                                <tr class="row-qualify">
+                                <tr class="row-qualify" data-team="LPCA">
                                     <td class="st-pos">2</td>
                                     <td class="col-team"><span class="st-team-name">Lagunita C.C.</span><span class="st-team-code">LPCA</span></td>
                                     <td>6</td>
@@ -2277,7 +2337,7 @@ body::before {
                                     <td class="st-l">2</td>
                                     <td class="st-pending-txt">vs CIVC</td>
                                 </tr>
-                                <tr class="row-qualify">
+                                <tr class="row-qualify" data-team="ATCA">
                                     <td class="st-pos">2</td>
                                     <td class="col-team"><span class="st-team-name">Altamira Tenis C.</span><span class="st-team-code">ATCA</span></td>
                                     <td>6</td>
@@ -2285,7 +2345,7 @@ body::before {
                                     <td class="st-l">2</td>
                                     <td class="st-pending-txt">vs RPCA</td>
                                 </tr>
-                                <tr class="row-danger">
+                                <tr class="row-danger" data-team="CPAB">
                                     <td class="st-pos">6</td>
                                     <td class="col-team"><span class="st-team-name">Club Puerto Azul</span><span class="st-team-code">CPAB</span></td>
                                     <td>6</td>
@@ -2293,7 +2353,7 @@ body::before {
                                     <td class="st-l">4</td>
                                     <td class="st-pending-txt">vs PPCA</td>
                                 </tr>
-                                <tr class="row-danger">
+                                <tr class="row-danger" data-team="VHPC">
                                     <td class="st-pos">7</td>
                                     <td class="col-team"><span class="st-team-name">Vívora Haus</span><span class="st-team-code">VHPC</span></td>
                                     <td>6</td>
@@ -2301,7 +2361,7 @@ body::before {
                                     <td class="st-l">5</td>
                                     <td class="st-pending-txt">vs GLIA</td>
                                 </tr>
-                                <tr class="row-danger">
+                                <tr class="row-danger" data-team="CIVC">
                                     <td class="st-pos">8</td>
                                     <td class="col-team"><span class="st-team-name">Centro Ítalo Ven.</span><span class="st-team-code">CIVC</span></td>
                                     <td>6</td>
@@ -2940,7 +3000,134 @@ body::before {
                 }
             });
         });
+
+        // ---- GRUPO MODAL ----
+        const grupoData = {
+            PPCA: { name: 'Premier Padel Academy', matches: [
+                { opp:'RPCA', oppName:'La Rosca Padel Club',     score:'1-2', res:'L' },
+                { opp:'GLIA', oppName:'Gali Padel',              score:'2-1', res:'W' },
+                { opp:'LPCA', oppName:'Lagunita Country Club',   score:'2-1', res:'W' },
+                { opp:'ATCA', oppName:'Altamira Tenis Club',     score:'1-2', res:'L' },
+                { opp:'VHPC', oppName:'Vívora Haus',             score:'3-0', res:'W' },
+                { opp:'CIVC', oppName:'Centro Ítalo Venezolano', score:'3-0', res:'W' },
+                { opp:'CPAB', oppName:'Club Puerto Azul',        score:null,  res:'P' },
+            ]},
+            RPCA: { name: 'La Rosca Padel Club', matches: [
+                { opp:'PPCA', oppName:'Premier Padel Academy',   score:'2-1', res:'W' },
+                { opp:'GLIA', oppName:'Gali Padel',              score:'1-2', res:'L' },
+                { opp:'LPCA', oppName:'Lagunita Country Club',   score:'2-1', res:'W' },
+                { opp:'ATCA', oppName:'Altamira Tenis Club',     score:null,  res:'P' },
+                { opp:'VHPC', oppName:'Vívora Haus',             score:'3-0', res:'W' },
+                { opp:'CIVC', oppName:'Centro Ítalo Venezolano', score:'3-0', res:'W' },
+                { opp:'CPAB', oppName:'Club Puerto Azul',        score:'3-0', res:'W' },
+            ]},
+            GLIA: { name: 'Gali Padel', matches: [
+                { opp:'PPCA', oppName:'Premier Padel Academy',   score:'1-2', res:'L' },
+                { opp:'RPCA', oppName:'La Rosca Padel Club',     score:'2-1', res:'W' },
+                { opp:'LPCA', oppName:'Lagunita Country Club',   score:'1-2', res:'L' },
+                { opp:'ATCA', oppName:'Altamira Tenis Club',     score:'2-1', res:'W' },
+                { opp:'VHPC', oppName:'Vívora Haus',             score:null,  res:'P' },
+                { opp:'CIVC', oppName:'Centro Ítalo Venezolano', score:'3-0', res:'W' },
+                { opp:'CPAB', oppName:'Club Puerto Azul',        score:'3-0', res:'W' },
+            ]},
+            LPCA: { name: 'Lagunita Country Club', matches: [
+                { opp:'PPCA', oppName:'Premier Padel Academy',   score:'1-2', res:'L' },
+                { opp:'RPCA', oppName:'La Rosca Padel Club',     score:'1-2', res:'L' },
+                { opp:'GLIA', oppName:'Gali Padel',              score:'2-1', res:'W' },
+                { opp:'ATCA', oppName:'Altamira Tenis Club',     score:'2-1', res:'W' },
+                { opp:'VHPC', oppName:'Vívora Haus',             score:'3-0', res:'W' },
+                { opp:'CIVC', oppName:'Centro Ítalo Venezolano', score:null,  res:'P' },
+                { opp:'CPAB', oppName:'Club Puerto Azul',        score:'2-1', res:'W' },
+            ]},
+            ATCA: { name: 'Altamira Tenis Club', matches: [
+                { opp:'PPCA', oppName:'Premier Padel Academy',   score:'2-1', res:'W' },
+                { opp:'RPCA', oppName:'La Rosca Padel Club',     score:null,  res:'P' },
+                { opp:'GLIA', oppName:'Gali Padel',              score:'1-2', res:'L' },
+                { opp:'LPCA', oppName:'Lagunita Country Club',   score:'1-2', res:'L' },
+                { opp:'VHPC', oppName:'Vívora Haus',             score:'2-1', res:'W' },
+                { opp:'CIVC', oppName:'Centro Ítalo Venezolano', score:'2-1', res:'W' },
+                { opp:'CPAB', oppName:'Club Puerto Azul',        score:'2-1', res:'W' },
+            ]},
+            VHPC: { name: 'Vívora Haus', matches: [
+                { opp:'PPCA', oppName:'Premier Padel Academy',   score:'0-3', res:'L' },
+                { opp:'RPCA', oppName:'La Rosca Padel Club',     score:'0-3', res:'L' },
+                { opp:'GLIA', oppName:'Gali Padel',              score:null,  res:'P' },
+                { opp:'LPCA', oppName:'Lagunita Country Club',   score:'0-3', res:'L' },
+                { opp:'ATCA', oppName:'Altamira Tenis Club',     score:'1-2', res:'L' },
+                { opp:'CIVC', oppName:'Centro Ítalo Venezolano', score:'3-0', res:'W' },
+                { opp:'CPAB', oppName:'Club Puerto Azul',        score:'1-2', res:'L' },
+            ]},
+            CIVC: { name: 'Centro Ítalo Venezolano', matches: [
+                { opp:'PPCA', oppName:'Premier Padel Academy',   score:'0-3', res:'L' },
+                { opp:'RPCA', oppName:'La Rosca Padel Club',     score:'0-3', res:'L' },
+                { opp:'GLIA', oppName:'Gali Padel',              score:'0-3', res:'L' },
+                { opp:'LPCA', oppName:'Lagunita Country Club',   score:null,  res:'P' },
+                { opp:'ATCA', oppName:'Altamira Tenis Club',     score:'1-2', res:'L' },
+                { opp:'VHPC', oppName:'Vívora Haus',             score:'0-3', res:'L' },
+                { opp:'CPAB', oppName:'Club Puerto Azul',        score:'0-3', res:'L' },
+            ]},
+            CPAB: { name: 'Club Puerto Azul', matches: [
+                { opp:'PPCA', oppName:'Premier Padel Academy',   score:null,  res:'P' },
+                { opp:'RPCA', oppName:'La Rosca Padel Club',     score:'0-3', res:'L' },
+                { opp:'GLIA', oppName:'Gali Padel',              score:'0-3', res:'L' },
+                { opp:'LPCA', oppName:'Lagunita Country Club',   score:'1-2', res:'L' },
+                { opp:'ATCA', oppName:'Altamira Tenis Club',     score:'1-2', res:'L' },
+                { opp:'VHPC', oppName:'Vívora Haus',             score:'2-1', res:'W' },
+                { opp:'CIVC', oppName:'Centro Ítalo Venezolano', score:'3-0', res:'W' },
+            ]},
+        };
+
+        function openGrupoModal(code) {
+            const team = grupoData[code];
+            if (!team) return;
+            const wins   = team.matches.filter(m => m.res === 'W').length;
+            const losses = team.matches.filter(m => m.res === 'L').length;
+            const pend   = team.matches.filter(m => m.res === 'P').length;
+            document.getElementById('gmCode').textContent = code;
+            document.getElementById('gmName').textContent = team.name;
+            document.getElementById('gmRecord').innerHTML =
+                `<span class="rw">${wins} victorias</span> · <span class="rl">${losses} derrotas</span>` +
+                (pend ? ` · <span>${pend} pendiente</span>` : '');
+            document.getElementById('gmMatches').innerHTML = team.matches.map(m => `
+                <div class="gm-row gm-${m.res.toLowerCase()}">
+                  <div>
+                    <div class="gm-opp">vs ${m.oppName}</div>
+                    <span class="gm-opp-code">${m.opp}</span>
+                  </div>
+                  <span class="gm-badge b${m.res.toLowerCase()}">
+                    ${m.res === 'P' ? 'Pendiente' : m.score + ' · ' + (m.res === 'W' ? 'Victoria' : 'Derrota')}
+                  </span>
+                </div>`).join('');
+            document.getElementById('grupoModal').style.display = 'block';
+        }
+
+        function closeGrupoModal() {
+            document.getElementById('grupoModal').style.display = 'none';
+        }
+
+        document.querySelectorAll('.standings-table tbody tr[data-team]').forEach(row => {
+            row.addEventListener('click', () => openGrupoModal(row.dataset.team));
+        });
+
+        document.getElementById('grupoModal').addEventListener('click', function(e) {
+            if (e.target === this) closeGrupoModal();
+        });
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGrupoModal(); });
     </script>
+
+    <!-- ============ GRUPO MODAL ============ -->
+    <div id="grupoModal">
+      <div class="gm-content">
+        <span class="gm-close" onclick="closeGrupoModal()">✕</span>
+        <div class="gm-header">
+          <div class="gm-code" id="gmCode"></div>
+          <div class="gm-name" id="gmName"></div>
+          <div class="gm-record" id="gmRecord"></div>
+        </div>
+        <div class="gm-matches" id="gmMatches"></div>
+      </div>
+    </div>
 
     <!-- ============ TWEAKS ============ -->
     <div id="tweaks-root"></div>
