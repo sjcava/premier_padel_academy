@@ -1900,8 +1900,8 @@ body::before {
                 <canvas id="performanceChart"></canvas>
             </div>
 
-            <div class="chart-container">
-                <canvas id="playersChart"></canvas>
+            <div class="chart-container" style="height:auto; padding:0; overflow:hidden;">
+                <div class="flourish-embed flourish-pictogram" data-src="visualisation/29001404"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/29001404/thumbnail" width="100%" alt="pictogram visualization" /></noscript></div>
             </div>
 
             <div class="chart-container">
@@ -2768,53 +2768,6 @@ body::before {
                         },
                         scales: {
                             y: {
-                                beginAtZero: true,
-                                ticks: { stepSize: 1 }
-                            }
-                        }
-                    }
-                });
-            }
-
-            const ctxJugadores = document.getElementById('playersChart');
-            if (ctxJugadores) {
-                new Chart(ctxJugadores, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Omar Álvarez', 'Ricardo Larrazábal', 'Juan Riveros', 'Christian Frendín', 'Simón Cava', 'Carlos Peña', 'Edgar Jaua', 'Daniel Figuera', 'Gustavo Barcos', 'Honorio Sigala'],
-                        datasets: [
-                            {
-                                label: 'Victorias',
-                                data: [2, 3, 2, 3, 3, 3, 2, 3, 1, 2],
-                                backgroundColor: 'rgba(76, 175, 80, 0.8)',
-                                borderColor: '#4CAF50',
-                                borderWidth: 1
-                            },
-                            {
-                                label: 'Derrotas',
-                                data: [0, 0, 0, 0, 1, 1, 2, 2, 3, 3],
-                                backgroundColor: 'rgba(244, 67, 54, 0.8)',
-                                borderColor: '#f44336',
-                                borderWidth: 1
-                            }
-                        ]
-                    },
-                    options: {
-                        indexAxis: 'y',
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: '👥 Récord de Victorias y Derrotas por Jugador',
-                                font: { size: window.innerWidth < 768 ? 12 : 16 }
-                            },
-                            legend: {
-                                position: 'top',
-                            }
-                        },
-                        scales: {
-                            x: {
                                 beginAtZero: true,
                                 ticks: { stepSize: 1 }
                             }
